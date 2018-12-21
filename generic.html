@@ -50,7 +50,17 @@
 									<p>首先從水利署、中央氣象局等開放資料平台取得需要的原始資料後，檢查過濾、並整理，若遇到較複雜、大量的資料，例如:歷年歷月各氣象站觀測資料，就要寫python網路爬蟲程式來截取，再整理我們需要的格式。
 									再來使用統計程式gapminder和雲端資訊視覺化平台tableau public做出圖表，來將資料視覺化並分析，使我們更能看出資料的變化趨勢。
 									發現問題點後，到相關的網站或文獻查詢原因，比對資料中呈現的趨勢與變化的影響因素，之後得出結論。</p>
-									<pre><code>
+									
+								</div>
+								<div class="col col1 first">
+									<br>
+									<br>
+									<div class="image fit">
+										<a href="generic.html" class="link"><img src="images/waterglass.jpg" alt="" /></a>
+									</div>
+								</div>
+							</div>
+							<pre><code>
 import urllib
 import urllib.request
 from bs4 import BeautifulSoup
@@ -95,15 +105,6 @@ for y in range(1998,2019):
             break
 csvfile.close()
 csvfile_year.close()</code></pre>
-								</div>
-								<div class="col col1 first">
-									<br>
-									<br>
-									<div class="image fit">
-										<a href="generic.html" class="link"><img src="images/waterglass.jpg" alt="" /></a>
-									</div>
-								</div>
-							</div>
 							<p></p>
 							<p></p>
 						</div>
