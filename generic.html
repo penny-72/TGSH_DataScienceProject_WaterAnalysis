@@ -50,38 +50,38 @@
 									<p>首先從水利署、中央氣象局等開放資料平台取得需要的原始資料後，檢查過濾、並整理，若遇到較複雜、大量的資料，例如:歷年歷月各氣象站觀測資料，就要寫python網路爬蟲程式來截取，再整理我們需要的格式。
 									再來使用統計程式gapminder和雲端資訊視覺化平台tableau public做出圖表，來將資料視覺化並分析，使我們更能看出資料的變化趨勢。
 									發現問題點後，到相關的網站或文獻查詢原因，比對資料中呈現的趨勢與變化的影響因素，之後得出結論。</p>
-									<code>
-<p>import urllib<br>
-import urllib.request<br>
-from bs4 import BeautifulSoup<br>
-import csv<br>
-csvfile=open("20181103v2.csv","w",newline='')<br>
-csvfile_year=open("20181103year.csv","w",newline='')<br>
-writer_year=csv.writer(csvfile_year)<br>
-writer=csv.writer(csvfile)<br>
-writer.writerow(['年份','月份','測站','雨量'])<br>
-writer_year.writerow(['年份','測站','雨量'])<br>
-<br>
-for y in range(1998,2019):<br>
-    rainfallsum={}<br>
-    for m in range(1,13):<br>
-        urlstr="https://www.cwb.gov.tw/V7/climate/monthlyData/Data/mD"+str(y)+str(m)+".htm"<br>
-        print(urlstr)<br>
-        page=urllib.request.urlopen(urlstr).read()<br>
-        soup=BeautifulSoup(page,"html.parser")<br>
-        stories = soup.find_all('td')<br>
-        j=14<br>
-        sum_j=0<br>
-        print("length=",len(stories))<br>
-        for i in stories:<br>
-            print(j,stories[j].text,stories[j+4].text)<br>
-            writer.writerow([y,m,stories[j].text,stories[j+4].text])<br>
-            if m==1 or rainfallsum.get(stories[j].text)==None:<br>
-                rainfallsum[stories[j].text]=0<br>
-            if stories[j+4].text=='T' or stories[j+4].text=='':<br>
-                rainfallsum[stories[j].text]=rainfallsum[stories[j].text]+0<br>
-            else:<br>
-                rainfallsum[stories[j].text]=rainfallsum[stories[j].text]+round(float(stories[j+4].text),1)<br>
+									<pre><code>
+import urllib
+import urllib.request
+from bs4 import BeautifulSoup
+import csv
+csvfile=open("20181103v2.csv","w",newline='')
+csvfile_year=open("20181103year.csv","w",newline='')
+writer_year=csv.writer(csvfile_year)
+writer=csv.writer(csvfile)
+writer.writerow(['年份','月份','測站','雨量'])
+writer_year.writerow(['年份','測站','雨量'])
+
+for y in range(1998,2019):
+    rainfallsum={}
+    for m in range(1,13):
+        urlstr="https://www.cwb.gov.tw/V7/climate/monthlyData/Data/mD"+str(y)+str(m)+".htm"
+        print(urlstr)
+        page=urllib.request.urlopen(urlstr).read()
+        soup=BeautifulSoup(page,"html.parser")
+        stories = soup.find_all('td')
+        j=14
+        sum_j=0
+        print("length=",len(stories))
+        for i in stories:
+            print(j,stories[j].text,stories[j+4].text)
+            writer.writerow([y,m,stories[j].text,stories[j+4].text])
+            if m==1 or rainfallsum.get(stories[j].text)==None:
+                rainfallsum[stories[j].text]=0
+            if stories[j+4].text=='T' or stories[j+4].text=='':
+                rainfallsum[stories[j].text]=rainfallsum[stories[j].text]+0
+            else:
+                rainfallsum[stories[j].text]=rainfallsum[stories[j].text]+round(float(stories[j+4].text),1)
             if m==12:
                 writer_year.writerow([y,stories[j].text,rainfallsum[stories[j].text]])
             if j+13 < len(stories):
@@ -94,7 +94,7 @@ for y in range(1998,2019):<br>
         if y==2018 and m==10:
             break
 csvfile.close()
-csvfile_year.close()</p></code>
+csvfile_year.close()</code></pre>
 								</div>
 								<div class="col col1 first">
 									<br>
