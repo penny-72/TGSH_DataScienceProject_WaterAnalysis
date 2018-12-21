@@ -51,10 +51,10 @@
 									再來使用統計程式gapminder和雲端資訊視覺化平台tableau public做出圖表，來將資料視覺化並分析，使我們更能看出資料的變化趨勢。
 									發現問題點後，到相關的網站或文獻查詢原因，比對資料中呈現的趨勢與變化的影響因素，之後得出結論。</p>
 									<pre><code>
-import urllib
-import urllib.request
-from bs4 import BeautifulSoup
-import csv
+		import urllib
+		import urllib.request
+		from bs4 import BeautifulSoup
+		import csv
 csvfile=open("20181103v2.csv","w",newline='')
 csvfile_year=open("20181103year.csv","w",newline='')
 writer_year=csv.writer(csvfile_year)
