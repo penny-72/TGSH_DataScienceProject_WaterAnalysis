@@ -39,6 +39,11 @@
         var options = {
           title: '台灣農業生活用水延伸',
           is3D: true,
+		slices:{
+            1:{offset:0.4},
+            2:{offset:0.3},
+            3:{offset:0.2}
+          }
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
