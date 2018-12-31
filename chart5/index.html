@@ -21,6 +21,123 @@
     <script src="libs/vizabi-ddfcsv-reader.js"></script>
     <script src="libs/vizabi-csv-reader.js"></script>
     <script src="libs/vizabi-excel-reader.js"></script>
+	  
+	  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['類別', '百萬立方公尺'],
+          ['北部',456],
+          ['中部',591],
+          ['南部',526],
+          ['東部',52],
+          ['離島地區',3]
+          
+        ]);
+
+        var options = {
+          title: '民國105年工業用水',
+          is3D: true,
+          slices:{
+           /* 1:{offset:0.4},*/
+            4:{offset:0.3},
+            3:{offset:0.15},
+          }
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['類別', '百萬立方公尺'],
+          ['北部',1924.09],
+          ['中部',4854.06],
+          ['南部',2462.57],
+          ['東部',2492.9],
+          ['離島地區',0]
+        ]);
+
+        var options = {
+          title: '民國105年農業用水',
+
+          is3D: true,
+          slices:{
+            1:{offset:0.05},
+            2:{offset:0.05},
+            3:{offset:0.05}
+          }
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_2d'));
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['類別', '百萬立方公尺'],
+          ['北部',1570],
+          ['中部',771],
+          ['南部',746],
+          ['東部',78],
+          ['離島地區',18.31]
+          
+        ]);
+
+        var options = {
+          title: '民國105年生活用水',
+          is3D: true,
+          slices:{
+           /* 1:{offset:0.4},*/
+            4:{offset:0.2},
+            3:{offset:0.1},
+          }
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_4d'));
+        chart.draw(data, options);
+      }
+    </script>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['類別', '百萬立方公尺'],
+          ['北部',3950.09],
+          ['中部',6216.06],
+          ['南部',3734.57],
+          ['東部',2622.9],
+          ['離島地區',23.11]
+        ]);
+
+        var options = {
+          title: '民國105年總用水',
+          is3D: true,
+          slices:{
+           /* 1:{offset:0.4},*/
+            4:{offset:0.2},
+            3:{offset:0.05},
+          }
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_1d'));
+        chart.draw(data, options);
+      }
+    </script>
 	  <style>
 	  .button {
   		background-color:lightblue;
@@ -81,5 +198,10 @@
 <br>
       
     </ul></p>
+	
+    <div id="piechart_3d" style="float:left;width:50%; height: 500px;"></div>
+    <div id="piechart_2d" style="float:right;width:50%; height: 500px;"></div>
+    <div id="piechart_4d" style="float:right;width:50%; height: 500px;"></div>
+    <div id="piechart_1d" style="float:right;width:50%; height: 500px;"></div>
   </body>
 </html>
