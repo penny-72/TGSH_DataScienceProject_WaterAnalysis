@@ -1,8 +1,8 @@
 var CONFIG = {
  "data": {
-  "_lastModified": 1541329939385,
+  "_lastModified": 1546608041708,
   "hasNameColumn": false,
-  "lastModified": 1541329939385,
+  "lastModified": 1546608041708,
   "nameColumnPosition": 0,
   "noCache": true,
   "path": "./data/20181103year_gp3.xlsx",
@@ -81,8 +81,9 @@ var CONFIG = {
     "domainMin": null,
     "fixBaseline": null,
     "scaleType": "linear",
+    "spaceRef": null,
     "use": "indicator",
-    "which": "年降雨量",
+    "which": "縣市",
     "zoomedMax": null,
     "zoomedMin": null
    },
@@ -170,9 +171,9 @@ var CONFIG = {
    "delayThresholdX2": 90,
    "delayThresholdX4": 45,
    "dim": "time",
-   "end": "2017",
+   "end": "0106",
    "endOrigin": null,
-   "endSelected": "2017",
+   "endSelected": "0106",
    "format": {
     "data": null,
     "ui": null
@@ -184,12 +185,12 @@ var CONFIG = {
    "playing": false,
    "record": false,
    "round": "round",
-   "start": "1998",
+   "start": "0087",
    "startOrigin": null,
-   "startSelected": "1998",
+   "startSelected": "0087",
    "step": 1,
    "unit": "year",
-   "value": "2017"
+   "value": "0106"
   }
  },
  "ui": {
