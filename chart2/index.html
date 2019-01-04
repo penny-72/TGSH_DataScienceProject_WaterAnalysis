@@ -3,7 +3,6 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>台灣用水-每人每日平均用水量</title>
-    <link rel="shortcut icon" href="favicon.ico" />
     <script src="https://d3js.org/d3.v4.js"></script>
     <link href="libs/vizabi.css" rel="stylesheet" type="text/css" >
     <link href="libs/bubblechart.css" rel="stylesheet" type="text/css">
@@ -11,7 +10,6 @@
     <link href="libs/mountainchart.css" rel="stylesheet" type="text/css">
     <link href="libs/barrankchart.css" rel="stylesheet" type="text/css">
     <link href="libs/linechart.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="assets/css/main.css" >
 
     <script src="libs/vizabi.js"></script>
     <script src="libs/bubblechart.js"></script>
@@ -26,16 +24,18 @@
 
   <body style="width: 70%; max-width: 900px; height: 100%; margin: 0 auto; font-family: 'Arial';">
 	<h1>台灣用水-每人每日平均用水量</h1>
-
 	<div id="placeholder" style="width: 100%; height: 600px;"></div>
 
     <script src="config.js"></script>
     <script>
+
       var ddfcsvReader = new DDFCsvReader.getDDFCsvReaderObject();
       Vizabi.Reader.extend("ddf", ddfcsvReader);
       Vizabi.Reader.extend("ext-csv", CsvReader.csvReaderObject);
       Vizabi.Reader.extend("excel", ExcelReader.excelReaderObject);
+
       var viz = Vizabi('LineChart', document.getElementById('placeholder'), CONFIG);
+
     </script>
     <div style="padding:10px;background-color: #e0ebeb">
       <p style="color: gray">此圖為可互動式的圖表，可依照需求改變表格型態 <br>
@@ -58,7 +58,6 @@
     <a href="https://penny-72.github.io/TGSH_DataScienceProject_WaterAnalysis/analysis.html"  target="_blank" class="button" style="width: 200px;background-color: #669999;padding: 14px;color: white;font-family: monospace;font-size: 150%;text-decoration: none;">Go to Aalysis</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!--想加一個連結讓他直接到分析的(三)-->
     <!--<a href="https://penny-72.github.io/TGSH_DataScienceProject_WaterAnalysis/index.html"  target="_blank" class="button" style="width: 200px;background-color: #669999;padding: 14px;color: white;font-family: monospace;font-size: 150%;text-decoration: none;">Back to Index</a>--><br><br>
     </div>
-
     <!-- Footer -->
       <footer id="footer" style="text-align: center;">
         <div class="copyright">

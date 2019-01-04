@@ -1,8 +1,8 @@
 var CONFIG = {
  "data": {
-  "_lastModified": 1541079676050,
+  "_lastModified": 1546620851296,
   "hasNameColumn": false,
-  "lastModified": 1541079676050,
+  "lastModified": 1546620851296,
   "nameColumnPosition": 0,
   "noCache": true,
   "path": "./data/20181028_台灣地區用水資料V4.xlsx",
@@ -81,8 +81,9 @@ var CONFIG = {
     "domainMin": null,
     "fixBaseline": null,
     "scaleType": "linear",
+    "spaceRef": null,
     "use": "indicator",
-    "which": "每人每日用水量（公升）",
+    "which": "每人每日平均用水量（公升）",
     "zoomedMax": null,
     "zoomedMin": null
    },
