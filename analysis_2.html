@@ -122,10 +122,19 @@
     </script>
     <style type="text/css">
       .tt{
-        font-size: 130%;
+        font-size: 150%;
       }
       .charttt{
-        font-size: 120%;
+        font-size: 130%;
+      }
+      .chartpicture{
+        width:70%; height: 400px;"
+      }
+      .chartp{
+        width: 50%;
+      }
+      .ct{
+        font-size: 140%;
       }
     </style>
 
@@ -159,44 +168,35 @@
           <div class="inner">
 
             <header class="align-center">
-              <h1>分析</h1>
-              <p>analysis</p><hr>
+              <h1>分析<br>台灣用水-地區與用途</h1>
             </header>
 
             <!-- Content -->
-              <h4 id="content">（二）台灣用水-地區與用途</h4>
-              
-                <p>將台灣各地區不同用途的用水量，依照年份統計分別繪製而成。<br></p>
-                <p>
-                <ul>
-                  <li class="tt">以地區為討論基準</li>
+                <hr><p>將台灣各地區不同用途的用水量，依照年份統計分別繪製而成。<br></p><hr><p>
+                  <h2 class="tt">(一) 以地區為討論基準</h2>
                   <ol>
-                    <li>東部:<br>根據東部用水的圖表可以看見，總用水量的曲線與農業用水的曲線是十分接近的，可以看出在東部地區影響用水最大的即是農業上的使用。</li><br>
-                    <li>中部:<br>根據中部用水的圖表可以看見，總用水量的曲線和農業用水的曲線隨時間起伏的樣貌是相似的，可以看出影響中部地區用水最大的是農業上的使用。<br></li><br>
-                    <li>南部:</li><br>
-                    <li>北部:<br>相較於其他縣市而言，北部地區的生活用水量較其他地區大上許多，可以從北部地區人口數為台灣最大得到解釋。<br><br>小結:<br>除了人口最多的北部地區之外，其他地區總用水量主要受到農業影響而上下起伏。
-</li><br>
-                    <h2 class="charttt">民國105年台灣工業用水</h2>
-                        <div id="piechart_3d" style="width:100%; height: 500px;"></div><br>
-                    <h2 class="charttt">民國105年台灣農業用水</h2> 
-                        <div id="piechart_2d" style="width:100%; height: 500px;"></div>
-                    <h2 class="charttt">民國105年台灣生活用水</h2>
-                        <div id="piechart_4d" style="width:100%; height: 500px;"></div>
-                    <h2 class="charttt">民國105年台灣總用水</h2>
-                    <div id="piechart_1d" style="width:100%; height: 500px;"></div>
-                  </ol>
-                  <li class="tt">以用途為討論基準</li>
+                    <li>東部:<br>根據東部用水的圖表可以看見，總用水量的曲線與農業用水的曲線是十分接近的，可以看出在東部地區影響用水最大的即是農業上的使用。</li><img src="images/各地各用途用水/依地區為基準/E.png" class="chartp"><br><br>
+                    <li>中部:<br>根據中部用水的圖表可以看見，總用水量的曲線和農業用水的曲線隨時間起伏的樣貌是相似的，可以看出影響中部地區用水最大的是農業上的使用。<br></li><img src="images/各地各用途用水/依地區為基準/central.png" class="chartp"><br><br>
+                    <li>南部:</li><br><img src="images/各地各用途用水/依地區為基準/S.png" class="chartp"><br><br>
+                    <li>北部:<br>相較於其他縣市而言，北部地區的生活用水量較其他地區大上許多，可以從北部地區人口數為台灣最大得到解釋。</li><img src="images/各地各用途用水/依地區為基準/N.png" class="chartp"><br><br>
+                    <li>小結:<br>除了人口最多的北部地區之外，其他地區總用水量主要受到農業影響而上下起伏。</li><br><hr>
+
+                  <h2 class="tt">(二) 以用途為討論基準</h2>
                   <ol>
-                    <li>農業用水</li>
-                    <li>工業用水</li>
-                    <li>民生用水</li>
+                    <li class="ct">農業用水 - 民國105年台灣農業用水</li>
+                        <div id="piechart_2d" class="chartpicture"></div><br>
+                    <li class="ct">工業用水 - 民國105年台灣工業用水</li>
+                        <div id="piechart_3d" class="chartpicture"></div><br>
+                    <li class="ct">生活用水 - 民國105年台灣生活用水</li>
+                        <div id="piechart_4d" class="chartpicture"></div><br>
+                    <li class="ct">總用水 - 民國105年台灣總用水</li>
+                        <div id="piechart_1d" class="chartpicture"></div><br>
                   </ol>
+                    
+                  </ol>
+                 
                 </ul>
 
-
-
-                <img src="images/p02-1v2.png"style="width:40%">&nbsp;&nbsp;<img src="images/p02-2v2.png"style="width:40%">&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://penny-72.github.io/TGSH_DataScienceProject_WaterAnalysis/chart7/" target="_blank" class="button">Go to the Chart</a><br>
-                (時間：民國 92-105 年；單位：百萬立方公尺)<br><br><hr>
                 
               
               </div>
