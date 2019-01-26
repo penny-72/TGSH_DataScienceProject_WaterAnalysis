@@ -130,6 +130,116 @@
         chart.draw(data, options);
       }
     </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', '區域工業總用水量');
+      data.addColumn('number', '北部');
+      data.addColumn('number', '中部');
+      data.addColumn('number', '南部');
+      data.addColumn('number', '東部');
+
+      data.addRows([
+        [86,512.5, 348.17,  699.59,  53.4],
+        [87,524.45,  391.52,  729.91,  55.99],
+        [88,533.27,  405.06,  724.54,  59.67],
+        [89,647.8, 572.6, 588.5, 61],
+        [90,629.66,  502.66,  548.88,  58.6],
+        [91,629.8, 511.51,  566.3, 57.94],
+        [92,498.21,  509.61,  541.66,  58.61],
+        [93,546.1, 526.9, 526.38,  54.93],
+        [94,463.31,  503.11,  519.72,  58.01],
+        [95,462.6, 530.05,  524.77,  57.95],
+        [96,465.74,  519.11,  600.94,  57.99],
+        [97,476.42,  526.06,  604.98,  57.57],
+        [98,448.07,  531.39,  512.29,  57.13],
+        [99,464.55,  543.09,  535.27,  57.46],
+        [100,464.43,  498.15,  529.93,  56.15],
+        [101,468.72,  554.69,  527.29,  55.86],
+        [102,468.13,  577.03,  532.2, 58.21],
+        [103,438.03,  571.37,  566.49,  57.63],
+        [104,456.77,  572.24,  512.95,  55.35],
+        [105,455.91,  591.41,  526.03,  52.17],
+      ]);
+
+      var options = {
+        chart: {
+          title: '歷年各區域工業用水量',
+          subtitle: '（時間：民國86-105年；水量單位：百萬立方公尺）'
+        },
+        width: 900,
+        height: 500,
+        axes: {
+          x: {
+            0: {side: 'top'}
+          }
+        }
+      };
+
+      var chart = new google.charts.Line(document.getElementById('line_top_x'));
+
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+  </script>
+  <script type="text/javascript">
+      google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', '區域工業面積');
+      data.addColumn('number', '北部');
+      data.addColumn('number', '中部');
+      data.addColumn('number', '南部');
+      data.addColumn('number', '東部');
+
+      data.addRows([
+        [87,  8207.02,  5496.05,  10447.91, 455.57],
+        [88,  8123.95,  5737.50,  10318.77, 495.1],
+        [89,  9545.52,  7967.40,  9322.49,  567.11],
+        [90,  9836.68,  7713.98,  9358.91,  626.7],
+        [91,  9862.21,  7855.26,  9816.55,  621.47],
+        [92,  7925.42,  6924.89,  8576.30,  587.93],
+        [93,  8390.56,  7109.48,  8551.46,  540.74],
+        [94,  7529.05,  6944.99,  8516.84,  573.51],
+        [95,  7502.01,  7341.69,  8767.31,  576.51],
+        [96,  7580.80,  7252.55,  9991.95,  589.57],
+        [97,  7953.71,  7397.59,  10348.72, 603],
+        [98,  7548.42,  7577.39,  8768.62,  601.23],
+        [99,  7686.54,  7538.75,  8757.64,  543.79],
+        [100, 7505.05,  7580.72,  8838.61,  540.29],
+        [101, 7566.56,  7905.92,  8953.37,  537.67],
+        [102, 7131.51,  7520.46,  8217.54,  504.62],
+        [103, 7753.59,  8449.74,  9127.58,  633.72],
+        [104, 7591.17,  8534.75,  8987.60,  574.74],
+        [105, 7955.46,  9461.23,  10114.92, 561.74],
+      ]);
+
+      var options = {
+        chart: {
+          title: '歷年各區域工業面積',
+          subtitle: '（時間：民國86-105年；面積單位：公頃）'
+        },
+        width: 900,
+        height: 500,
+        axes: {
+          x: {
+            0: {side: 'top'}
+          }
+        }
+      };
+
+      var chart = new google.charts.Line(document.getElementById('line_top_y'));
+
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+  </script>
     <style type="text/css">
       .tt{
         font-size: 150%;
@@ -192,6 +302,19 @@
                     <li>小結:<br>除了人口最多的北部地區之外，其他地區總用水量主要受到農業影響而上下起伏。</li><br><hr>
 
                   <h2 class="tt">(二) 以用途為討論基準</h2>
+                    <h3>台灣工業用水分類</h>
+                    <p>工業用水來源分為自行取水與自來水兩種，目前台灣工業用水來源仍以自行取水居多。</p>
+                    <!--這裡是以用途為準不知道要不要加這一段<p>自來水用水量:南部>北部>中部>東部>離島</p>
+                    <p>自行取水水量:中部>北部>南部>東部>離島</p>-->
+                    <p>翻閱年報得知自來水系統供應之百分率較低原因是:</p>
+                      <li>未設置工業專用供水系統，且由自來水供應之水 價與一般用水相同，會使得成本增加。</li>
+                      <li>部分工廠用水要求水質特殊，或不適用含氯或消毒藥劑之自來水，而採自行取水供應。</li>
+                      <li>應用自來水之成本高於自行取水成本，其差距太大。</li>
+                    <p>比較區域工業面積、用水量合計兩張圖，可看出工業面積的曲線和用水量的曲線隨時間起伏是相似的。</p>
+                    <p>將區域工業面積、用水量合計的數據算出相關係數為0.983522，證明各區域的用水量和工業面積是有關係的。</p>
+                    
+                    <div id="line_top_x"></div>
+                    <div id="line_top_y"></div>
                   <ol>
                     <li class="ct">農業用水 - 民國105年台灣農業用水</li>
                         <div id="piechart_2d" class="chartpicture"></div><br>
