@@ -1,15 +1,15 @@
 var CONFIG = {
  "data": {
-  "_lastModified": 1548493641605,
+  "_lastModified": 1548510569290,
   "hasNameColumn": false,
-  "lastModified": 1548493641605,
+  "lastModified": 1548510569290,
   "nameColumnPosition": 0,
   "noCache": true,
-  "path": "./data/工業用水各業別歷年分析.xlsx",
+  "path": "./data/工業用水量.xlsx",
   "reader": "excel",
-  "sheet": "面積與用水量",
+  "sheet": "畫圖的",
   "timeInColumns": true,
-  "ddfPath": "./data/工業用水各業別歷年分析.xlsx"
+  "ddfPath": "./data/工業用水量.xlsx"
  },
  "locale": {
   "filePath": "assets/translation/",
@@ -23,7 +23,7 @@ var CONFIG = {
     ],
     "type": "entity_domain"
    },
-   "dim": "業別",
+   "dim": "區域",
    "filter": {},
    "show": {},
    "showFallback": {},
@@ -37,7 +37,7 @@ var CONFIG = {
     ],
     "type": "entity_domain"
    },
-   "dim": "業別",
+   "dim": "區域",
    "filter": {},
    "show": {},
    "showFallback": {},
@@ -47,6 +47,26 @@ var CONFIG = {
   "marker": {
    "allowSelectMultiple": true,
    "axis_x": {
+    "allow": {
+     "scales": [
+      "time"
+     ]
+    },
+    "autoconfig": {
+     "index": 0,
+     "type": "time"
+    },
+    "data": "data",
+    "domainMax": null,
+    "domainMin": null,
+    "fixBaseline": null,
+    "scaleType": "time",
+    "use": "indicator",
+    "which": "time",
+    "zoomedMax": null,
+    "zoomedMin": null
+   },
+   "axis_y": {
     "allow": {
      "scales": [
       "linear",
@@ -63,7 +83,7 @@ var CONFIG = {
     "scaleType": "linear",
     "spaceRef": null,
     "use": "indicator",
-    "which": "用水量(百萬立方公尺)",
+    "which": "歷年各區域工業面積(公頃)",
     "zoomedMax": null,
     "zoomedMin": null
    },
@@ -102,9 +122,9 @@ var CONFIG = {
     "data": "data",
     "scaleType": "ordinal",
     "use": "property",
-    "which": "業別"
+    "which": "區域"
    },
-   "limit": 1000,
+   "limit": 5000,
    "opacityHighlightDim": 0.1,
    "opacityRegular": 1,
    "opacitySelectDim": 0.3,
@@ -147,7 +167,7 @@ var CONFIG = {
    "autoconfig": {
     "type": "time"
    },
-   "delay": 535,
+   "delay": 150,
    "delayThresholdX2": 90,
    "delayThresholdX4": 45,
    "dim": "time",
@@ -181,7 +201,20 @@ var CONFIG = {
    "fullscreen",
    "presentation"
   ],
-  "chart": {},
+  "chart": {
+   "curve": "curveMonotoneX",
+   "labels": {
+    "min_number_of_entities_when_values_hide": 2
+   },
+   "whenHovering": {
+    "hideVerticalNow": false,
+    "higlightValueX": true,
+    "higlightValueY": true,
+    "showProjectionLineX": true,
+    "showProjectionLineY": true,
+    "showTooltip": false
+   }
+  },
   "datawarning": {
    "doubtDomain": [],
    "doubtRange": []
@@ -189,24 +222,24 @@ var CONFIG = {
   "dialogs": {
    "dialog": {
     "find": {
-     "enableSelectShowSwitch": false
+     "enableSelectShowSwitch": false,
+     "panelMode": "show"
     }
    },
    "moreoptions": [
     "opacity",
     "speed",
+    "axes",
     "colors",
     "presentation",
     "about"
    ],
    "popup": [
-    "timedisplay",
     "colors",
     "find",
     "moreoptions"
    ],
    "sidebar": [
-    "timedisplay",
     "colors",
     "find"
    ]
@@ -214,5 +247,5 @@ var CONFIG = {
   "presentation": false,
   "splash": false
  },
- "chartType": "BarRankChart"
+ "chartType": "LineChart"
 };
