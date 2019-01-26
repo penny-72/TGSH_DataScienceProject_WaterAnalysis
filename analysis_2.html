@@ -240,6 +240,116 @@
       chart.draw(data, google.charts.Line.convertOptions(options));
     }
   </script>
+  <script type="text/javascript">
+      google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', '區域工業自來水用水量');
+      data.addColumn('number', '北部');
+      data.addColumn('number', '中部');
+      data.addColumn('number', '南部');
+      data.addColumn('number', '東部');
+
+      data.addRows([
+        [86,  156.22,  28.33, 225.69,  3.4],
+        [87,  146.18,  32.1,  258.73,  2.12],
+        [88,  158.21,  38,    270.65,  2.03],
+        [89,  192.2,   43.5,  308.5,   2.2],
+        [90,  191.35,  43.38, 296.44,  1.56],
+        [91,  186.38,  42.79, 307.38,  2.24],
+        [92,  216,     49.8,  298.7,   2.2],
+        [93,  247.8,   56.5,  300.4,   2],
+        [94,  253,     61,    316.4,   1.9],
+        [95,  271.6,   74.5,  328.8,   1.96],
+        [96,  273.9,   78.6,  352.5,   1.9],
+        [97,  274.2,   92.5,  353.8,   1.7],
+        [98,  239.6,   84.5,  313.7,   1.4],
+        [99,  276.8,   114.8, 347.6,   1.6],
+        [100, 286.6,   120.8, 359.2,   1.6],
+        [101, 292.33,  131.6, 363.54,  1.7],
+        [102, 294.05,  141.6, 360.2,   1.7],
+        [103, 305.66,  153.28,  369.3, 1.73],
+        [104, 280.46,  149.04,  360.74,  1.81],
+        [105, 273.69,  154.55,  366.08,  1.49]
+      ]);
+
+      var options = {
+        chart: {
+          title: '歷年各區域工業自來水用水量',
+          subtitle: '（時間：民國86-105年；水量單位：百萬立方公尺）'
+        },
+        width: 900,
+        height: 500,
+        axes: {
+          x: {
+            0: {side: 'top'}
+          }
+        }
+      };
+
+      var chart = new google.charts.Line(document.getElementById('line_top_z'));
+
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+  </script>
+  <script type="text/javascript">
+      google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', '區域工業自行取水用水量');
+      data.addColumn('number', '北部');
+      data.addColumn('number', '中部');
+      data.addColumn('number', '南部');
+      data.addColumn('number', '東部');
+
+      data.addRows([
+        [86,  356.28,  319.84,  473.9,   50],
+        [87,  378.27,  359.42,  471.18,  53.87],
+        [88,  375.06,  367.06,  453.89,  57.64],
+        [89,  455.6,   529.1,   280,     58.8],
+        [90,  438.31,  459.28,  252.45,  57.03],
+        [91,  443.42,  468.72,  258.92,  55.7],
+        [92,  282.21,  459.81,  242.96,  56.41],
+        [93,  298.3,   470.4,   225.98,  52.93],
+        [94,  210.31,  442.11,  203.32,  56.11],
+        [95,  191,     455.55,  195.97,  55.99],
+        [96,  191.88,  440.54,  248.42,  56.09],
+        [97,  202.19,  433.59,  251.2,   55.89],
+        [98,  208.43,  446.91,  198.62,  55.69],
+        [99,  187.76,  482.26,  187.71,  55.88],
+        [100, 177.88,  377.34,  170.72,  54.54],
+        [101, 176.4,   423.1,   163.75,  54.13],
+        [102, 174.08,  435.47,  172,     56.47],
+        [103, 132.37,  418.09,  197.19,  55.9],
+        [104, 176.31,  423.2,   152.21,  53.54],
+        [105, 182.22,  436.86,  159.95,  50.67]
+      ]);
+
+      var options = {
+        chart: {
+          title: '歷年各區域工業自行取水用水量',
+          subtitle: '（時間：民國86-105年；水量單位：百萬立方公尺）'
+        },
+        width: 900,
+        height: 500,
+        axes: {
+          x: {
+            0: {side: 'top'}
+          }
+        }
+      };
+
+      var chart = new google.charts.Line(document.getElementById('line_top_a'));
+
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+  </script>
     <style type="text/css">
       .tt{
         font-size: 150%;
@@ -293,7 +403,7 @@
 
             <!-- Content -->
                 <hr><p>將台灣各地區不同用途的用水量，依照年份統計分別繪製而成。<br></p><hr><p>
-                  <h2 class="tt">(一) 以地區為討論基準</h2>
+                  <h3>(一) 以地區為討論基準</h>
                   <ol>
                     <li>東部:<br>根據東部用水的圖表可以看見，總用水量的曲線與農業用水的曲線是十分接近的，可以看出在東部地區影響用水最大的即是農業上的使用。</li><img src="images/各地各用途用水/依地區為基準/E.PNG" class="chartp"><br><br>
                     <li>中部:<br>根據中部用水的圖表可以看見，總用水量的曲線和農業用水的曲線隨時間起伏的樣貌是相似的，可以看出影響中部地區用水最大的是農業上的使用。<br></li><img src="images/各地各用途用水/依地區為基準/central.PNG" class="chartp"><br><br>
@@ -301,8 +411,15 @@
                     <li>北部:<br>相較於其他縣市而言，北部地區的生活用水量較其他地區大上許多，可以從北部地區人口數為台灣最大得到解釋。</li><img src="images/各地各用途用水/依地區為基準/N.PNG" class="chartp"><br><br>
                     <li>小結:<br>除了人口最多的北部地區之外，其他地區總用水量主要受到農業影響而上下起伏。</li><br><hr>
                   </ol>
-                  <h2>(二) 以用途為討論基準</h2>
+                  <h3>(二) 以用途為討論基準</h>
                     <h4>台灣工業用水分類</h>
+                    <p>比較區域工業面積、用水量兩張圖，可看出工業面積的曲線和用水量的曲線隨時間起伏是相似的。</p>
+                    <p>將區域工業面積、用水量的數據算出相關係數為0.983522，證明各區域的用水量和工業面積是有關係的。</p>
+                    <div id="line_top_x"></div>
+                    <br><br>
+                    <div id="line_top_y"></div>
+                    <br><br><hr>
+            
                     <p>工業用水來源分為自行取水與自來水兩種，目前台灣工業用水來源仍以自行取水居多。</p>
                     <!--這裡是以用途為準不知道要不要加這一段<p>自來水用水量:南部>北部>中部>東部>離島</p>
                     <p>自行取水水量:中部>北部>南部>東部>離島</p>-->
@@ -312,13 +429,11 @@
                       <li>部分工廠用水要求水質特殊，或不適用含氯或消毒藥劑之自來水，而採自行取水供應。</li>
                       <li>應用自來水之成本高於自行取水成本，其差距太大。</li>
                     </ol>
-                    <p>比較區域工業面積、用水量合計兩張圖，可看出工業面積的曲線和用水量的曲線隨時間起伏是相似的。</p>
-                    <p>將區域工業面積、用水量合計的數據算出相關係數為0.983522，證明各區域的用水量和工業面積是有關係的。</p>
-                    
-                    <div id="line_top_x"></div>
+                    <div id="line_top_z"></div>
                     <br><br>
-                    <div id="line_top_y"></div>
-                    <br><br><br>
+                    <div id="line_top_a"></div>
+                    <br><br><hr>
+            
                   <ol>
                     <li class="ct">農業用水 - 民國105年台灣農業用水</li>
                         <div id="piechart_2d" class="chartpicture"></div><br>
