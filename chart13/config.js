@@ -1,15 +1,15 @@
 var CONFIG = {
  "data": {
-  "_lastModified": 1548594281702,
+  "_lastModified": 1548595127687,
   "hasNameColumn": false,
-  "lastModified": 1548594281702,
+  "lastModified": 1548595127687,
   "nameColumnPosition": 0,
   "noCache": true,
-  "path": "./data/各區域歷年農業細分用水.xlsx",
+  "path": "./data/灌溉面積與用水量.xlsx",
   "reader": "excel",
   "sheet": "畫圖",
   "timeInColumns": true,
-  "ddfPath": "./data/各區域歷年農業細分用水.xlsx"
+  "ddfPath": "./data/灌溉面積與用水量.xlsx"
  },
  "locale": {
   "filePath": "assets/translation/",
@@ -49,26 +49,6 @@ var CONFIG = {
    "axis_x": {
     "allow": {
      "scales": [
-      "time"
-     ]
-    },
-    "autoconfig": {
-     "index": 0,
-     "type": "time"
-    },
-    "data": "data",
-    "domainMax": null,
-    "domainMin": null,
-    "fixBaseline": null,
-    "scaleType": "time",
-    "use": "indicator",
-    "which": "time",
-    "zoomedMax": null,
-    "zoomedMin": null
-   },
-   "axis_y": {
-    "allow": {
-     "scales": [
       "linear",
       "log"
      ]
@@ -81,9 +61,8 @@ var CONFIG = {
     "domainMin": null,
     "fixBaseline": null,
     "scaleType": "linear",
-    "spaceRef": null,
     "use": "indicator",
-    "which": "灌溉用水(百萬立方公尺)",
+    "which": "縣市水稻灌溉面積(單位:公頃)",
     "zoomedMax": null,
     "zoomedMin": null
    },
@@ -124,7 +103,7 @@ var CONFIG = {
     "use": "property",
     "which": "區域"
    },
-   "limit": 5000,
+   "limit": 1000,
    "opacityHighlightDim": 0.1,
    "opacityRegular": 1,
    "opacitySelectDim": 0.3,
@@ -185,9 +164,9 @@ var CONFIG = {
    "playing": false,
    "record": false,
    "round": "round",
-   "start": "0087",
+   "start": "0086",
    "startOrigin": null,
-   "startSelected": "0087",
+   "startSelected": "0086",
    "step": 1,
    "unit": "year",
    "value": "0105"
@@ -201,20 +180,7 @@ var CONFIG = {
    "fullscreen",
    "presentation"
   ],
-  "chart": {
-   "curve": "curveMonotoneX",
-   "labels": {
-    "min_number_of_entities_when_values_hide": 2
-   },
-   "whenHovering": {
-    "hideVerticalNow": false,
-    "higlightValueX": true,
-    "higlightValueY": true,
-    "showProjectionLineX": true,
-    "showProjectionLineY": true,
-    "showTooltip": false
-   }
-  },
+  "chart": {},
   "datawarning": {
    "doubtDomain": [],
    "doubtRange": []
@@ -222,24 +188,24 @@ var CONFIG = {
   "dialogs": {
    "dialog": {
     "find": {
-     "enableSelectShowSwitch": false,
-     "panelMode": "show"
+     "enableSelectShowSwitch": false
     }
    },
    "moreoptions": [
     "opacity",
     "speed",
-    "axes",
     "colors",
     "presentation",
     "about"
    ],
    "popup": [
+    "timedisplay",
     "colors",
     "find",
     "moreoptions"
    ],
    "sidebar": [
+    "timedisplay",
     "colors",
     "find"
    ]
@@ -247,5 +213,5 @@ var CONFIG = {
   "presentation": false,
   "splash": false
  },
- "chartType": "LineChart"
+ "chartType": "BarRankChart"
 };
