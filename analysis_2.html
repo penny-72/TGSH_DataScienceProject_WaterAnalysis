@@ -391,6 +391,164 @@
         chart.draw(data, google.charts.Bar.convertOptions(options));
       }
     </script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', '水稻灌溉用水量', '雜作灌溉用水量'],
+          ['86',  6707073,     1833714],
+          ['87',  6727116,     1784343],
+          ['88',  6347865,     1908208],
+          ['89',  6512855,     1853539],
+          ['90',  6411677,     2790372],
+          ['91',  5961371.75,  3583226.6],
+          ['92',  6165076.94,  2334525.08],
+          ['93',  6539766.94,  2294233.57],
+          ['94',  5952514.32,  2576933.19],
+          ['95',  5799332.28,  2631709.63],
+          ['96',  6129003.66,  3181208.18],
+          ['97',  6202858.88,   2807934.63],
+          ['98',  6278482.74,   3348728.86],
+          ['99',  5684516.53,  3295075.9],
+          ['100', 5993414.26,  2770299.85],
+          ['101', 5767591.07,  2544794.63],
+          ['102', 4946459.83,  3191645.08],
+          ['103', 7205291.71,  2819969.16],
+          ['104', 5812451.44,  2943148.64],
+          ['105', 4744527.34,  2565789.67]
+        ]);
+
+        var options = {
+          chart: {
+            title: '台灣灌溉用水用途',
+            subtitle: '(時間:民國86-105年；水量單位:千立方公尺)',
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material4'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', '水稻灌溉面積', '雜作灌溉面積'],
+          ['86',  339215,  206110],
+          ['87',  309189,  234142],
+          ['88',  307922,  202199],
+          ['89',  336747,  201779],
+          ['90',  309201,  175080],
+          ['91',  303920,  274150],
+          ['92',  294038,  209502],
+          ['93',  259545,  208768],
+          ['94',  289234,  184745],
+          ['95',  299420,  208942],
+          ['96',  279476,  304178],
+          ['97',  306005,  248698],
+          ['98',  279699,  246835],
+          ['99',  272280,  238055],
+          ['100', 291710,  197264],
+          ['101', 280262,  192650],
+          ['102', 290094,  207269],
+          ['103', 297078,  189838],
+          ['104', 273128,  199422],
+          ['105', 289125,  172650]
+        ]);
+
+        var options = {
+          chart: {
+            title: '台灣灌溉用水面積',
+            subtitle: '(時間:民國86-105年；面積單位:公頃)',
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material5'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Year');
+      data.addColumn('number', '灌溉用水');
+      data.addColumn('number', '養殖用水');
+      data.addColumn('number', '畜牧用水');
+
+      data.addRows([
+          [87,  10682.42,  1463.21, 109.17],
+          [88,  10423.32,  1512,    117],
+          [89,  10606.94,  1584,    119],
+          [90,  11479.26,  1418.72, 113.79],
+          [91,  11764.18,  1536.45, 110.13],
+          [92,  10780.53,  1545.16, 108.73],
+          [93,  10794.76,  1701.26, 107.76],
+          [94,  11037.23,  1633.15, 111.15],
+          [95,  10549.23,  1577.89, 111.1],
+          [96,  11666.49,  1587.72, 104.83],
+          [97,  11212.18,  1646.77, 101.16],
+          [98,  11781.73,  1315.13, 73.38],
+          [99,  11088.49,  1042.86, 73.83],
+          [100, 11310.31,  1049.81, 74.99],
+          [101, 11402.68,  1038.66, 72.43],
+          [102, 11384.06,  1013.28, 70.47],
+          [103, 11996.89,  972.37,  66.76],
+          [104, 10857.44,  880.09,  66.52],
+          [105, 10791.9,   875.99,  65.74]
+      ]);
+
+      var options = {
+        chart: {
+          title: 'Box Office Earnings in First Two Weeks of Opening',
+          subtitle: 'in millions of dollars (USD)'
+        },
+        width: 600,
+        height: 400,
+        axes: {
+          x: {
+            0: {side: 'top'}
+          }
+        }
+      };
+
+      var chart = new google.charts.Line(document.getElementById('line_top_b'));
+
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+  </script>
+  <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['用水用途', '百萬立方公尺'],
+          ['灌溉用水',11137.37053],
+          ['養殖用水',1336.553684],
+          ['畜牧用水',93.57578947],
+        ]);
+
+        var options = {
+          title: '台灣農業用水用途比較',
+          subtitle: '(時間:民國87-105年各用水的平均值)',
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
   <style type="text/css">
       .tt{
         font-size: 150%;
@@ -472,7 +630,7 @@
                   </ol>
                     <div id="columnchart_material3" style="width: 600px; height: 400px;"></div><br>
                     <div id="line_top_z"></div>
-                    <br><br>
+                    <br>
                     <div id="line_top_a"></div>
                     <br><br><hr>
                     <p>翻閱年報得知：該區域前五大用水行業用水量占全區用水量百分比順位趨勢吻合;<br>
@@ -488,9 +646,17 @@
                     <p>其中金屬製品製造業和食品製造業分別是從民國96年和97年才進入前五名;<br>
                        而化學材料製品業和紙漿、紙及紙製品業則穩站前兩名。</p><br>
                     <img src="images/工業用水細分1.jpg" class="chartp"><br><img src="images/工業用水細分2.jpg" class="chartp"><br>
-
                     <hr>
-                  <h2 class="tt">(三) 以用途為討論基準-台灣用水分類</h2>
+                  <h2 class="tt">(三) 以用途為討論基準-台灣農業用水</h2>
+                    <p>1.農業用水為台灣最大的用水用途，而農業用水又分為灌溉 養殖 畜牧，從圖表可以得知灌溉用水占最大用途。</p>
+                    <br><div id="line_top_b"></div><br><div id="piechart" class="chartpicture"></div><br>
+                    <p>2.灌溉用水主要分為水稻 雜作兩大類，從圖表可以看出灌溉用水以水稻居多。</p><br>
+                    <div id="columnchart_material4" style="width: 630px; height: 400px;"></div>
+                    <br>
+                    <div id="columnchart_material5" style="width: 630px; height: 400px;"></div>
+                    <br>
+                    <hr>
+                  <h2 class="tt">(四) 以用途為討論基準-台灣用水分類</h2>
                   <ol>
                     <li class="ct">農業用水 - 民國105年台灣農業用水</li>
                         <div id="piechart_2d" class="chartpicture"></div><br>
