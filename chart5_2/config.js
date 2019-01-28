@@ -1,8 +1,8 @@
 var CONFIG = {
  "data": {
-  "_lastModified": 1548594281702,
+  "_lastModified": 1548679103152,
   "hasNameColumn": false,
-  "lastModified": 1548594281702,
+  "lastModified": 1548679103152,
   "nameColumnPosition": 0,
   "noCache": true,
   "path": "./data/各區域歷年農業細分用水.xlsx",
@@ -83,7 +83,7 @@ var CONFIG = {
     "scaleType": "linear",
     "spaceRef": null,
     "use": "indicator",
-    "which": "灌溉用水(百萬立方公尺)",
+    "which": "台灣農業用水用途比較(百萬立方公尺)",
     "zoomedMax": null,
     "zoomedMin": null
    },
