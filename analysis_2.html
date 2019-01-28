@@ -350,6 +350,47 @@
       chart.draw(data, google.charts.Line.convertOptions(options));
     }
   </script>
+  <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', '自來水', '自行取水'],
+          ['86',  413.64,  1200.02],
+          ['87',  439.13,  1262.74],
+          ['88',  468.89,  1253.65],
+          ['89',  546.4, 1323.5],
+          ['90',  532.73,  1207.07],
+          ['91',  538.79,  1226.76],
+          ['92',  566.7, 1041.39],
+          ['93',  606.7, 1047.61],
+          ['94',  632.3, 911.85],
+          ['95',  676.86,  898.51],
+          ['96',  706.9, 936.93],
+          ['97',  722.2, 945.38],
+          ['98',  639.2, 912.12],
+          ['99',  740.8, 916.06],
+          ['100', 768.2, 783.62],
+          ['101', 789.17,  820.7],
+          ['102', 797.55,  841.43],
+          ['103', 829.97,  806.86],
+          ['104', 792.05,  808.49],
+          ['105', 795.81,  832.84]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Company Performance',
+            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material3'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
   <style type="text/css">
       .tt{
         font-size: 150%;
@@ -445,6 +486,7 @@
                   </ol>
                     <p>其中金屬製品製造業和食品製造業分別是從民國96年和97年才進入前五名;<br>
                        而化學材料製品業和紙漿、紙及紙製品業則穩站前兩名。</p><br>
+                    <div id="columnchart_material3" style="width: 600px; height: 400px;"></div><br>
                     <img src="images/工業用水細分1.jpg" class="chartp"><br><img src="images/工業用水細分2.jpg" class="chartp"><br>
 
                     <hr>
