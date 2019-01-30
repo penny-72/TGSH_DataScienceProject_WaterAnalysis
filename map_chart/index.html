@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130179265-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-130179265-5');
+    </script>
+    <link rel="shortcut icon" href="favicon.ico" />
 <meta charset="utf-8" />
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
@@ -35,9 +44,9 @@ top: 0; right: 0; background-color: #111; transition: 0.3s;opacity: 0.8;
 <body>
 	<div id="sidebar" onclick="closeNav()">
 		<h3 class="p"><strong>台灣降雨地圖&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&#215;</strong></h3>
-			<li class="p">地圖之標記為該地之氣象觀測站</li>
-			<li class="p">點選後即可觀看該地區12個月之降雨分布圖</li>
-			<li class="p">取自中央氣象局民國87-105年各月之降雨量平均值</li>
+			<li class="p">地圖標記為該地氣象觀測站</li>
+			<li class="p">點選後即可觀看該地區民國87-105年平均後之12個月的降雨分布圖</li>
+			<li class="p">取自中央氣象局民國87-105年各月降雨量觀測資料</li>
 			<li class="p">將滑鼠游標移至該圖上即可觀看該區7-9月降雨量占該區年降雨量之百分比</li>
 	</div>
 	<div id="main">
