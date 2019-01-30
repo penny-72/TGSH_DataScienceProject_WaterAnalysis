@@ -22,191 +22,63 @@
     <script src="libs/vizabi-csv-reader.js"></script>
     <script src="libs/vizabi-excel-reader.js"></script>
 	  
-	  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['類別', '百萬立方公尺'],
-          ['北部',456],
-          ['中部',591],
-          ['南部',526],
-          ['東部',52],
-          ['離島地區',3]
-          
-        ]);
-
-        var options = {
-          //title: '民國105年工業用水',
-          is3D: true,
-          slices:{
-           /* 1:{offset:0.4},*/
-            4:{offset:0.3},
-            3:{offset:0.15},
-          }
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
-        chart.draw(data, options);
-      }
-    </script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['類別', '百萬立方公尺'],
-          ['北部',1924.09],
-          ['中部',4854.06],
-          ['南部',2462.57],
-          ['東部',2492.9],
-          ['離島地區',0]
-        ]);
-
-        var options = {
-          //title: '民國105年農業用水',
-
-          is3D: true,
-          slices:{
-            1:{offset:0.05},
-            2:{offset:0.05},
-            3:{offset:0.05}
-          }
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_2d'));
-        chart.draw(data, options);
-      }
-    </script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['類別', '百萬立方公尺'],
-          ['北部',1570],
-          ['中部',771],
-          ['南部',746],
-          ['東部',78],
-          ['離島地區',18.31]
-          
-        ]);
-
-        var options = {
-          //title: '民國105年生活用水',
-          is3D: true,
-          slices:{
-           /* 1:{offset:0.4},*/
-            4:{offset:0.2},
-            3:{offset:0.1},
-          }
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_4d'));
-        chart.draw(data, options);
-      }
-    </script>
-    <meta charset="utf-8">
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['類別', '百萬立方公尺'],
-          ['北部',3950.09],
-          ['中部',6216.06],
-          ['南部',3734.57],
-          ['東部',2622.9],
-          ['離島地區',23.11]
-        ]);
-
-        var options = {
-          //title: '民國105年總用水',
-          is3D: true,
-          slices:{
-           /* 1:{offset:0.4},*/
-            4:{offset:0.2},
-            3:{offset:0.05},
-          }
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_1d'));
-        chart.draw(data, options);
-      }
-    </script>
 	  <style>
-	  .button {
-  		background-color:lightblue;
-		-moz-appearance: none;
-		-webkit-appearance: none;
-		-ms-appearance: none;
-		appearance: none;
-		-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		border-radius: 4px;
-		border: 0;
-		cursor: pointer;
-		display: inline-block;
-		font-weight: 700;
-		height: 2.85em;
-		line-height: 2.95em;
-		padding: 0 1.5em;
-		text-align: center;
-		text-decoration: none;
-		white-space: nowrap;
-		  }</style>
+      #sidebar {
+      height: 500px; width: 300px; position: fixed; z-index: 10000;
+      top: 0; right: 0; background-color: #111; transition: 0.3s;opacity: 0.8;
+      }
+      #main {transition: margin-left .3s; padding: 2px;}
+      .p{color:white;padding:16px;}
+      #button{width: 200px;background-color: #669999;padding: 10px;color: white;font-family: monospace;font-size: 150%;text-decoration: none;float:right}
+    </style>
+
   </head>
 
   <body style="width: 70%; max-width: 900px; height: 100%; margin: 0 auto; font-family: 'Arial';">
 	<h1>地區與用途延伸-台灣農業用水分類</h1>
+  <div id="main">
+      <button id="button" class="openbtn" onclick="openNav()"><strong>使用說明</strong></button>
+  </div>
 	<a href="https://penny-72.github.io/TGSH_DataScienceProject_WaterAnalysis/chart5_2/" class="button" target="_blank" style="color: white;">台灣農業用水分類</a>
 	<div id="placeholder" style="width: 100%; height: 600px;"></div>
 
     <script src="config.js"></script>
     <script>
-
       var ddfcsvReader = new DDFCsvReader.getDDFCsvReaderObject();
       Vizabi.Reader.extend("ddf", ddfcsvReader);
       Vizabi.Reader.extend("ext-csv", CsvReader.csvReaderObject);
       Vizabi.Reader.extend("excel", ExcelReader.excelReaderObject);
-
       var viz = Vizabi('LineChart', document.getElementById('placeholder'), CONFIG);
-
     </script>
-	  <div style="background-color: #e0ebeb">
-      <p style="color: gray">此圖為可互動式的圖表，可依照需求改變表格型態 <br>
-      <ul style="color: gray;">
+	  <div id="sidebar" onclick="closeNav()" style="padding:16px;">
+      <p  class="p">此圖為可互動式的圖表，可依照需求改變表格型態</p>
+      <ul  class="p">
         <li>中間下方小箭頭可調整播放速度</li>
         <li>點選左下方播放按鈕播放</li> 
-        <li>左上角文字「工業用水」點選後可觀看農業用水、生活用水、總用水之表格</li>
+        <li>左上角文字「每人每日平均用水量」點選後可觀看歷年平均用水量之表格</li>
       </ul>
-    </div>
-    <h3 style="color: gray">本表建議用法 :</h3>
-    <ol style="color: gray">
-
+    
+    <h3  class="p">本表建議用法 :</h3>
+    <ol  class="p">
       <li>點選下方齒輪圖案按鈕OPTIONS</li>
       <li>點選X and Y</li>
       <li>輸入數字，將X軸min與max修改為欲特別提出討論的年份</li>
       <li>點選右下方灰色字體APPLY</li>
       <li>點選左下方播放按鈕</li>
-<br>
-      
-    </ul></p>
-    <h2 style="color:black">民國105年台灣工業用水</h2>
-    <div id="piechart_3d" style="width:100%; height: 500px;"></div>
-    <h2 style="color:black">民國105年台灣農業用水</h2>	
-    <div id="piechart_2d" style="width:100%; height: 500px;"></div>
-    <h2 style="color:black">民國105年台灣生活用水</h2>
-    <div id="piechart_4d" style="width:100%; height: 500px;"></div>
-    <h2 style="color:black">民國105年台灣總用水</h2>
-    <div id="piechart_1d" style="width:100%; height: 500px;"></div>
-
+    </ol><br><br><br><hr><br>
+    </div>
+    
+    <script>
+      function openNav() {
+      document.getElementById("sidebar").style.width = "300px";
+      document.getElementById("sidebar").style.height = "500px";
+      document.getElementById("main").style.marginLeft = "250px";
+      }
+      function closeNav() {
+      document.getElementById("sidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+      }
+    </script>
     <hr><br><div style="text-align: right;">
     <a href="https://penny-72.github.io/TGSH_DataScienceProject_WaterAnalysis/analysis.html"  target="_blank" class="button" style="width: 200px;background-color: #669999;padding: 14px;color: white;font-family: monospace;font-size: 150%;text-decoration: none;">Go to Aalysis</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="https://penny-72.github.io/TGSH_DataScienceProject_WaterAnalysis/index.html"  target="_blank" class="button" style="width: 200px;background-color: #669999;padding: 14px;color: white;font-family: monospace;font-size: 150%;text-decoration: none;">Back to Index</a><br><br>
