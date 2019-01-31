@@ -10,48 +10,54 @@
       gtag('config', 'UA-130179265-5');
     </script>
     <link rel="shortcut icon" href="favicon.ico" />
-<meta charset="utf-8" />
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"/>
-<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
-<style type="text/css">
-#map{float: center}
-</style>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"/>
+	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
+	<style type="text/css">
+		#map{float: center}
+	</style>
 
- <style type="text/css">
- .pics{ position:relative;}
- .pics img{ position:absolute;
-  /* 淡出淡入效果2秒 */
-  -webkit-transition: opacity 1.2s ease-in-out;
-  -moz-transition: opacity 1.2s ease-in-out;
-  -o-transition: opacity 1.2s ease-in-out;
-  transition: opacity 1.2s ease-in-out;
- }
- .pics img:last-child:hover{
-     /* 滑入時第一張透明度設0 */
-      opacity:0;}
- </style>
+	<!--789月降雨百分比顯示-->
+ 	<style type="text/css">
+ 		.pics{ position:relative;}
+ 		.pics img{ position:absolute;
+  		/* 淡出淡入效果2秒 */
+  		-webkit-transition: opacity 1.2s ease-in-out;
+  		-moz-transition: opacity 1.2s ease-in-out;
+  		-o-transition: opacity 1.2s ease-in-out;
+  		transition: opacity 1.2s ease-in-out;
+ 		}
+		 .pics img:last-child:hover{
+     	/* 滑入時第一張透明度設0 */
+      	opacity:0;}
+ 	</style>
 
- <style>
-#sidebar {
-height: 400px; width: 250px; position: fixed; z-index: 10000;
-top: 0; right: 0; background-color: #111; transition: 0.3s;opacity: 0.8;
-}
-#main {transition: margin-left .3s; padding: 2px;}
-.p{color:white;padding:16px;}
-#button{width: 200px;background-color: #669999;padding: 10px;color: white;font-family: monospace;font-size: 150%;text-decoration: none;float:right}
-</style>
+ 	<!--使用說明樣式-->
+ 	<style>
+		#sidebar {
+		height: 400px; width: 250px; position: fixed; z-index: 10000;
+		top: 0; right: 0; background-color: #111; transition: 0.3s;opacity: 0.8;
+		}
+		#main {transition: margin-left .3s; padding: 2px;}
+		.p{color:white;padding:16px;}
+		#button{width: 200px;background-color: #669999;padding: 10px;color: white;font-family: monospace;font-size: 150%;text-decoration: none;float:right}
+	</style>
 </head>
 <body>
 	<div id="sidebar" onclick="closeNav()">
 		<h3 class="p"><strong>台灣降雨地圖&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&#215;</strong></h3>
 			<li class="p">地圖標記為該地氣象觀測站</li>
-			<li class="p">點選後即可觀看該地區民國87-105年平均後之12個月的降雨分布圖</li>
-			<li class="p">取自中央氣象局民國87-105年各月降雨量觀測資料</li>
+			<li class="p">點選後即可觀看該地區民國70-99年平均後之12個月的降雨分布圖</li>
+			<li class="p">取自中央氣象局民國70-99年各月降雨量觀測資料</li>
 			<li class="p">將滑鼠游標移至該圖上即可觀看該區7-9月降雨量占該區年降雨量之百分比</li>
 	</div>
+
+	<!--使用說明按鈕-->
 	<div id="main">
 		<button id="button" class="openbtn" onclick="openNav()"><strong>使用說明</strong></button>
 	</div>
+
+	<!--使用說明動態功能-->
 	<script>
 		function openNav() {
 		document.getElementById("sidebar").style.width = "250px";
@@ -63,67 +69,67 @@ top: 0; right: 0; background-color: #111; transition: 0.3s;opacity: 0.8;
 		document.getElementById("main").style.marginLeft= "0";
 		}
 	</script>
+	
+	<!--地理資訊地圖-->
 	<div id="map" style="width: 100%; height: 1000px"></div>
-<script>
-var map = L.map('map').setView([23.736571, 121.0657029], 7.5);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-
-//北部
-var marker = L.marker([25.0377,121.5149]).addTo(map);//台北
-marker.bindPopup('<p><strong>Taipei</strong></p><div class="pics"><img src="台北_2.jpg" style="height:250px"><img src="台北.jpg" style="height:250px"></div>').openPopup();
-var marker = L.marker([25.1333,121.7405]).addTo(map);//基隆
-marker.bindPopup('<p><strong>Keelung</strong></p><div class="pics"><img src="基隆_2.jpg" style="height:250px"><img src="基隆.jpg" style="height:250px"></div>').openPopup();
-//var marker = L.marker([25.0067,121.0475]).addTo(map);//桃園
-//marker.bindPopup('目前無此測站之資料').openPopup();
-var marker = L.marker([25.1649,121.4489]).addTo(map);//新北
-marker.bindPopup('<p><strong>Tamsui</strong></p><div class="pics"><img src="淡水_2.jpg" style="height:250px"><img src="淡水.jpg" style="height:250px"></div>').openPopup();
-var marker = L.marker([24.7987,120.9869]).addTo(map);//新竹
-marker.bindPopup('<p><strong>Hsinchu</strong></p><div class="pics"><img src="新竹_2.jpg" style="height:250px"><img src="新竹.jpg" style="height:250px"></div>').openPopup();
-var marker = L.marker([24.7640,121.7565]).addTo(map);//宜蘭
-marker.bindPopup('<p><strong>Yilan</strong></p><div class="pics"><img src="宜蘭_2.jpg" style="height:250px"><img src="宜蘭.jpg" style="height:250px"></div>').openPopup();
-//中部
-var marker = L.marker([23.4959,120.4329]).addTo(map);//嘉義
-marker.bindPopup('<p><strong>Chiayi</strong></p><div class="pics"><img src="嘉義_2.jpg" style="height:250px"><img src="嘉義.jpg" style="height:250px"></div>').openPopup();
-var marker = L.marker([24.1457,120.6841]).addTo(map);//台中
-marker.bindPopup('<p><strong>Taichung</strong></p><div class="pics"><img src="台中_2.jpg" style="height:250px"><img src="台中.jpg" style="height:250px"></div>').openPopup();
-var marker = L.marker([23.8813,120.9081]).addTo(map);//南投
-marker.bindPopup('<p><strong>Sun Moon Lake</strong></p><div class="pics"><img src="日月潭_2.jpg" style="height:250px"><img src="日月潭.jpg" style="height:250px"></div>').openPopup();
-var marker = L.marker([23.4876,120.9595]).addTo(map);//南投玉山
-marker.bindPopup('<p><strong>Yushan</strong></p><div class="pics"><img src="玉山_2.jpg" style="height:250px"><img src="玉山.jpg" style="height:250px"></div>').openPopup();
-//var marker = L.marker([24.5646,120.8246]).addTo(map);//苗栗
-//marker.bindPopup('目前無此測站之資料').openPopup();
-//var marker = L.marker([23.8752,120.5746]).addTo(map);//彰化
-//marker.bindPopup('目前無此測站之資料').openPopup();
-//var marker = L.marker([23.7375,120.4179]).addTo(map);//雲林
-//marker.bindPopup('目前無此測站之資料').openPopup();
-//南部
-var marker = L.marker([22.9932,120.2048]).addTo(map);//台南
-marker.bindPopup('<p><strong>Tainan</strong></p><div class="pics"><img src="台南_2.jpg" style="height:250px"><img src="台南.jpg" style="height:250px"></div>').openPopup();
-var marker = L.marker([23.5655,119.5631]).addTo(map);//澎湖
-marker.bindPopup('<p><strong>Penghu</strong></p><div class="pics"><img src="澎湖_2.jpg" style="height:250px"><img src="澎湖.jpg" style="height:250px"></div>').openPopup();
-var marker = L.marker([22.5660,120.3157]).addTo(map);//高雄
-marker.bindPopup('<p><strong>Kaohsiung</strong></p><div class="pics"><img src="高雄_2.jpg" style="height:250px"><img src="高雄.jpg" style="height:250px"></div>').openPopup();
-var marker = L.marker([22.0039,120.7463]).addTo(map);//屏東
-marker.bindPopup('<p><strong>Hengchun</strong></p><div class="pics"><img src="恆春_2.jpg" style="height:250px"><img src="恆春.jpg" style="height:250px"></div>').openPopup();
-//東部
-var marker = L.marker([22.7522,121.1546]).addTo(map);//台東
-marker.bindPopup('<p><strong>Taitung</strong></p><div class="pics"><img src="台東_2.jpg" style="height:250px"><img src="台東.jpg" style="height:250px"></div>').openPopup();
-var marker = L.marker([22.3557,120.9038]).addTo(map);//台東大武
-marker.bindPopup('<p><strong>Dawu</strong></p><div class="pics"><img src="大武_2.jpg" style="height:250px"><img src="大武.jpg" style="height:250px"></div>').openPopup();
-var marker = L.marker([23.0975,121.3734]).addTo(map);//台東成功
-marker.bindPopup('<p><strong>Chenggong</strong></p><div class="pics"><img src="成功_2.jpg" style="height:250px"><img src="成功.jpg" style="height:250px"></div>').openPopup();
-var marker = L.marker([22.0370,121.5583]).addTo(map);//台東蘭嶼
-marker.bindPopup('<p><strong>Lanyu</strong></p><div class="pics"><img src="蘭嶼_2.jpg" style="height:250px"><img src="蘭嶼.jpg" style="height:250px"></div>').openPopup();
-var marker = L.marker([23.9751,121.6133]).addTo(map);//花蓮
-marker.bindPopup('<p><strong>Hualien</strong></p><div class="pics"><img src="花蓮_2.jpg" style="height:250px"><img src="花蓮.jpg" style="height:250px"></div>').openPopup();
-//離島
-//var marker = L.marker([26.1693,119.9234]).addTo(map);//馬祖
-//marker.bindPopup('目前無此測站之資料').openPopup();
-//var marker = L.marker([24.4073,118.2893]).addTo(map);//金門
-//marker.bindPopup('目前無此測站之資料').openPopup();
-
-</script>
+	<script>
+		var map = L.map('map').setView([23.736571, 121.0657029], 7.5);
+		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+		}).addTo(map);
+		//北部
+		var marker = L.marker([25.0377,121.5149]).addTo(map);//台北
+		marker.bindPopup('<p><strong>Taipei</strong></p><div class="pics"><img src="台北_2.jpg" style="height:250px"><img src="台北.jpg" style="height:250px"></div>').openPopup();
+		var marker = L.marker([25.1333,121.7405]).addTo(map);//基隆
+		marker.bindPopup('<p><strong>Keelung</strong></p><div class="pics"><img src="基隆_2.jpg" style="height:250px"><img src="基隆.jpg" style="height:250px"></div>').openPopup();
+		//var marker = L.marker([25.0067,121.0475]).addTo(map);//桃園
+		//marker.bindPopup('目前無此測站之資料').openPopup();
+		var marker = L.marker([25.1649,121.4489]).addTo(map);//新北
+		marker.bindPopup('<p><strong>Tamsui</strong></p><div class="pics"><img src="淡水_2.jpg" style="height:250px"><img src="淡水.jpg" style="height:250px"></div>').openPopup();
+		var marker = L.marker([24.7987,120.9869]).addTo(map);//新竹
+		marker.bindPopup('<p><strong>Hsinchu</strong></p><div class="pics"><img src="新竹_2.jpg" style="height:250px"><img src="新竹.jpg" style="height:250px"></div>').openPopup();
+		var marker = L.marker([24.7640,121.7565]).addTo(map);//宜蘭
+		marker.bindPopup('<p><strong>Yilan</strong></p><div class="pics"><img src="宜蘭_2.jpg" style="height:250px"><img src="宜蘭.jpg" style="height:250px"></div>').openPopup();
+		//中部
+		var marker = L.marker([23.4959,120.4329]).addTo(map);//嘉義
+		marker.bindPopup('<p><strong>Chiayi</strong></p><div class="pics"><img src="嘉義_2.jpg" style="height:250px"><img src="嘉義.jpg" style="height:250px"></div>').openPopup();
+		var marker = L.marker([24.1457,120.6841]).addTo(map);//台中
+		marker.bindPopup('<p><strong>Taichung</strong></p><div class="pics"><img src="台中_2.jpg" style="height:250px"><img src="台中.jpg" style="height:250px"></div>').openPopup();
+		var marker = L.marker([23.8813,120.9081]).addTo(map);//南投
+		marker.bindPopup('<p><strong>Sun Moon Lake</strong></p><div class="pics"><img src="日月潭_2.jpg" style="height:250px"><img src="日月潭.jpg" style="height:250px"></div>').openPopup();
+		var marker = L.marker([23.4876,120.9595]).addTo(map);//南投玉山
+		marker.bindPopup('<p><strong>Yushan</strong></p><div class="pics"><img src="玉山_2.jpg" style="height:250px"><img src="玉山.jpg" style="height:250px"></div>').openPopup();
+		//var marker = L.marker([24.5646,120.8246]).addTo(map);//苗栗
+		//marker.bindPopup('目前無此測站之資料').openPopup();
+		//var marker = L.marker([23.8752,120.5746]).addTo(map);//彰化
+		//marker.bindPopup('目前無此測站之資料').openPopup();
+		//var marker = L.marker([23.7375,120.4179]).addTo(map);//雲林
+		//marker.bindPopup('目前無此測站之資料').openPopup();
+		//南部
+		var marker = L.marker([22.9932,120.2048]).addTo(map);//台南
+		marker.bindPopup('<p><strong>Tainan</strong></p><div class="pics"><img src="台南_2.jpg" style="height:250px"><img src="台南.jpg" style="height:250px"></div>').openPopup();
+		var marker = L.marker([23.5655,119.5631]).addTo(map);//澎湖
+		marker.bindPopup('<p><strong>Penghu</strong></p><div class="pics"><img src="澎湖_2.jpg" style="height:250px"><img src="澎湖.jpg" style="height:250px"></div>').openPopup();
+		var marker = L.marker([22.5660,120.3157]).addTo(map);//高雄
+		marker.bindPopup('<p><strong>Kaohsiung</strong></p><div class="pics"><img src="高雄_2.jpg" style="height:250px"><img src="高雄.jpg" style="height:250px"></div>').openPopup();
+		var marker = L.marker([22.0039,120.7463]).addTo(map);//屏東
+		marker.bindPopup('<p><strong>Hengchun</strong></p><div class="pics"><img src="恆春_2.jpg" style="height:250px"><img src="恆春.jpg" style="height:250px"></div>').openPopup();
+		//東部
+		var marker = L.marker([22.7522,121.1546]).addTo(map);//台東
+		marker.bindPopup('<p><strong>Taitung</strong></p><div class="pics"><img src="台東_2.jpg" style="height:250px"><img src="台東.jpg" style="height:250px"></div>').openPopup();
+		var marker = L.marker([22.3557,120.9038]).addTo(map);//台東大武
+		marker.bindPopup('<p><strong>Dawu</strong></p><div class="pics"><img src="大武_2.jpg" style="height:250px"><img src="大武.jpg" style="height:250px"></div>').openPopup();
+		var marker = L.marker([23.0975,121.3734]).addTo(map);//台東成功
+		marker.bindPopup('<p><strong>Chenggong</strong></p><div class="pics"><img src="成功_2.jpg" style="height:250px"><img src="成功.jpg" style="height:250px"></div>').openPopup();
+		var marker = L.marker([22.0370,121.5583]).addTo(map);//台東蘭嶼
+		marker.bindPopup('<p><strong>Lanyu</strong></p><div class="pics"><img src="蘭嶼_2.jpg" style="height:250px"><img src="蘭嶼.jpg" style="height:250px"></div>').openPopup();
+		var marker = L.marker([23.9751,121.6133]).addTo(map);//花蓮
+		marker.bindPopup('<p><strong>Hualien</strong></p><div class="pics"><img src="花蓮_2.jpg" style="height:250px"><img src="花蓮.jpg" style="height:250px"></div>').openPopup();
+		//離島
+		//var marker = L.marker([26.1693,119.9234]).addTo(map);//馬祖
+		//marker.bindPopup('目前無此測站之資料').openPopup();
+		//var marker = L.marker([24.4073,118.2893]).addTo(map);//金門
+		//marker.bindPopup('目前無此測站之資料').openPopup();
+	</script>
 </body>
 </html>
