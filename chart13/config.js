@@ -1,8 +1,8 @@
 var CONFIG = {
  "data": {
-  "_lastModified": 1548595127687,
+  "_lastModified": 1550391469433,
   "hasNameColumn": false,
-  "lastModified": 1548595127687,
+  "lastModified": 1550391469433,
   "nameColumnPosition": 0,
   "noCache": true,
   "path": "./data/灌溉面積與用水量.xlsx",
@@ -62,7 +62,7 @@ var CONFIG = {
     "fixBaseline": null,
     "scaleType": "linear",
     "use": "indicator",
-    "which": "縣市水稻灌溉面積(單位:公頃)",
+    "which": "縣市水稻用水量(千立方公尺)",
     "zoomedMax": null,
     "zoomedMin": null
    },
@@ -80,15 +80,21 @@ var CONFIG = {
     "autoconfig": {},
     "data": "data",
     "palette": {
+     "0": "hsl(270, 80%, 55%)",
+     "25": "hsl(202.5, 80%, 55%)",
+     "50": "hsl(135, 80%, 55%)",
+     "75": "hsl(48, 70%, 62%)",
+     "100": "hsl(0, 80%, 55%)",
      "_default": "#ffb600"
     },
     "paletteLabels": null,
-    "scaleType": "ordinal",
+    "scaleType": "linear",
+    "spaceRef": null,
     "syncModels": [
      "marker_colorlegend"
     ],
-    "use": "constant",
-    "which": "_default"
+    "use": "indicator",
+    "which": "分區域顏色"
    },
    "highlight": [],
    "label": {
