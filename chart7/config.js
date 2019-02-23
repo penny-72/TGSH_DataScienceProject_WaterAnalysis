@@ -1,8 +1,8 @@
 var CONFIG = {
  "data": {
-  "_lastModified": 1541542723587,
+  "_lastModified": 1550899119436,
   "hasNameColumn": false,
-  "lastModified": 1541542723587,
+  "lastModified": 1550899119436,
   "nameColumnPosition": 0,
   "noCache": true,
   "path": "./data/poster用2.xlsx",
@@ -81,6 +81,7 @@ var CONFIG = {
     "domainMin": null,
     "fixBaseline": null,
     "scaleType": "linear",
+    "spaceRef": null,
     "use": "indicator",
     "which": "月降雨量",
     "zoomedMax": null,
@@ -100,15 +101,21 @@ var CONFIG = {
     "autoconfig": {},
     "data": "data",
     "palette": {
+     "0": "hsl(270, 80%, 55%)",
+     "25": "hsl(202.5, 80%, 55%)",
+     "50": "hsl(135, 80%, 55%)",
+     "75": "hsl(48, 70%, 62%)",
+     "100": "hsl(0, 80%, 55%)",
      "_default": "#ffb600"
     },
     "paletteLabels": null,
-    "scaleType": "ordinal",
+    "scaleType": "linear",
+    "spaceRef": null,
     "syncModels": [
      "marker_colorlegend"
     ],
-    "use": "constant",
-    "which": "_default"
+    "use": "indicator",
+    "which": "月降雨總和"
    },
    "highlight": [],
    "label": {
