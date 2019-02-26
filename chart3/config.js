@@ -1,8 +1,8 @@
 var CONFIG = {
  "data": {
-  "_lastModified": 1546608041708,
+  "_lastModified": 1551147696026,
   "hasNameColumn": false,
-  "lastModified": 1546608041708,
+  "lastModified": 1551147696026,
   "nameColumnPosition": 0,
   "noCache": true,
   "path": "./data/20181103year_gp3.xlsx",
@@ -83,7 +83,7 @@ var CONFIG = {
     "scaleType": "linear",
     "spaceRef": null,
     "use": "indicator",
-    "which": "縣市",
+    "which": "區域(可搭配Color選取「地區分色」)",
     "zoomedMax": null,
     "zoomedMin": null
    },
@@ -101,15 +101,21 @@ var CONFIG = {
     "autoconfig": {},
     "data": "data",
     "palette": {
+     "0": "hsl(270, 80%, 55%)",
+     "25": "hsl(202.5, 80%, 55%)",
+     "50": "hsl(135, 80%, 55%)",
+     "75": "hsl(48, 70%, 62%)",
+     "100": "hsl(0, 80%, 55%)",
      "_default": "#ffb600"
     },
     "paletteLabels": null,
-    "scaleType": "ordinal",
+    "scaleType": "linear",
+    "spaceRef": null,
     "syncModels": [
      "marker_colorlegend"
     ],
-    "use": "constant",
-    "which": "_default"
+    "use": "indicator",
+    "which": "「地區分色」(Y軸請勿選取)"
    },
    "highlight": [],
    "label": {
