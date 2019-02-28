@@ -1,15 +1,15 @@
 var CONFIG = {
  "data": {
-  "_lastModified": 1551156026567,
+  "_lastModified": 1551358078832,
   "hasNameColumn": false,
-  "lastModified": 1551156026567,
+  "lastModified": 1551358078832,
   "nameColumnPosition": 0,
   "noCache": true,
-  "path": "./data/水庫 (2).xlsx",
+  "path": "./data/細分養殖.xlsx",
   "reader": "excel",
-  "sheet": "整理好的水庫",
-  "timeInColumns": false,
-  "ddfPath": "./data/水庫 (2).xlsx"
+  "sheet": "統整畫圖",
+  "timeInColumns": true,
+  "ddfPath": "./data/細分養殖.xlsx"
  },
  "locale": {
   "filePath": "assets/translation/",
@@ -23,20 +23,9 @@ var CONFIG = {
     ],
     "type": "entity_domain"
    },
-   "dim": "水庫名稱",
+   "dim": "種類",
    "filter": {},
-   "show": {
-    "水庫名稱": {
-     "$in": [
-      "德基水庫",
-      "日月潭水庫",
-      "曾文水庫",
-      "牡丹水庫",
-      "石門水庫",
-      "翡翠水庫"
-     ]
-    }
-   },
+   "show": {},
    "showFallback": {},
    "showItemsMaxCount": null,
    "skipFilter": false
@@ -48,7 +37,7 @@ var CONFIG = {
     ],
     "type": "entity_domain"
    },
-   "dim": "地區分色",
+   "dim": "種類",
    "filter": {},
    "show": {},
    "showFallback": {},
@@ -73,7 +62,7 @@ var CONFIG = {
     "fixBaseline": null,
     "scaleType": "time",
     "use": "indicator",
-    "which": "日期",
+    "which": "time",
     "zoomedMax": null,
     "zoomedMin": null
    },
@@ -94,7 +83,7 @@ var CONFIG = {
     "scaleType": "linear",
     "spaceRef": null,
     "use": "indicator",
-    "which": "蓄水百分比",
+    "which": "養殖用水量(千立方公尺/年)",
     "zoomedMax": null,
     "zoomedMin": null
    },
@@ -128,12 +117,12 @@ var CONFIG = {
     },
     "paletteLabels": null,
     "scaleType": "ordinal",
-    "spaceRef": null,
+    "spaceRef": "entities",
     "syncModels": [
      "marker_colorlegend"
     ],
-    "use": "indicator",
-    "which": "地區分色"
+    "use": "property",
+    "which": "種類"
    },
    "highlight": [],
    "label": {
@@ -146,7 +135,7 @@ var CONFIG = {
     "data": "data",
     "scaleType": "ordinal",
     "use": "property",
-    "which": "水庫名稱"
+    "which": "種類"
    },
    "limit": 5000,
    "opacityHighlightDim": 0.1,
@@ -194,10 +183,10 @@ var CONFIG = {
    "delay": 150,
    "delayThresholdX2": 90,
    "delayThresholdX4": 45,
-   "dim": "日期",
-   "end": "2019-02",
+   "dim": "time",
+   "end": "0104",
    "endOrigin": null,
-   "endSelected": "2019-02",
+   "endSelected": "0104",
    "format": {
     "data": null,
     "ui": null
@@ -209,12 +198,12 @@ var CONFIG = {
    "playing": false,
    "record": false,
    "round": "round",
-   "start": "2003-02",
+   "start": "0091",
    "startOrigin": null,
-   "startSelected": "2003-02",
+   "startSelected": "0091",
    "step": 1,
-   "unit": "month",
-   "value": "2019-02"
+   "unit": "year",
+   "value": "0104"
   }
  },
  "ui": {
