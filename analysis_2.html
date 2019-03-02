@@ -17,7 +17,6 @@
      window.dataLayer = window.dataLayer || [];
      function gtag(){dataLayer.push(arguments);}
      gtag('js', new Date());
-
      gtag('config', 'UA-130179265-5');
     </script>
 
@@ -134,16 +133,13 @@
     <script type="text/javascript">
       google.charts.load('current', {'packages':['line']});
       google.charts.setOnLoadCallback(drawChart);
-
     function drawChart() {
-
       var data = new google.visualization.DataTable();
       data.addColumn('number', '區域工業總用水量');
       data.addColumn('number', '北部');
       data.addColumn('number', '中部');
       data.addColumn('number', '南部');
       data.addColumn('number', '東部');
-
       data.addRows([
         [86,512.5, 348.17,  699.59,  53.4],
         [87,524.45,  391.52,  729.91,  55.99],
@@ -166,7 +162,6 @@
         [104,456.77,  572.24,  512.95,  55.35],
         [105,455.91,  591.41,  526.03,  52.17],
       ]);
-
       var options = {
         chart: {
           title: '歷年各區域工業用水量',
@@ -180,25 +175,20 @@
           }
         }
       };
-
       var chart = new google.charts.Line(document.getElementById('line_top_x'));
-
       chart.draw(data, google.charts.Line.convertOptions(options));
     }
   </script>
   <script type="text/javascript">
       google.charts.load('current', {'packages':['line']});
       google.charts.setOnLoadCallback(drawChart);
-
     function drawChart() {
-
       var data = new google.visualization.DataTable();
       data.addColumn('number', '區域工業面積');
       data.addColumn('number', '北部');
       data.addColumn('number', '中部');
       data.addColumn('number', '南部');
       data.addColumn('number', '東部');
-
       data.addRows([
         [87,  8207.02,  5496.05,  10447.91, 455.57],
         [88,  8123.95,  5737.50,  10318.77, 495.1],
@@ -220,7 +210,6 @@
         [104, 7591.17,  8534.75,  8987.60,  574.74],
         [105, 7955.46,  9461.23,  10114.92, 561.74],
       ]);
-
       var options = {
         chart: {
           title: '歷年各區域工業面積',
@@ -234,25 +223,20 @@
           }
         }
       };
-
       var chart = new google.charts.Line(document.getElementById('line_top_y'));
-
       chart.draw(data, google.charts.Line.convertOptions(options));
     }
   </script>
   <script type="text/javascript">
       google.charts.load('current', {'packages':['line']});
       google.charts.setOnLoadCallback(drawChart);
-
     function drawChart() {
-
       var data = new google.visualization.DataTable();
       data.addColumn('number', '區域工業自來水用水量');
       data.addColumn('number', '北部');
       data.addColumn('number', '中部');
       data.addColumn('number', '南部');
       data.addColumn('number', '東部');
-
       data.addRows([
         [86,  156.22,  28.33, 225.69,  3.4],
         [87,  146.18,  32.1,  258.73,  2.12],
@@ -275,7 +259,6 @@
         [104, 280.46,  149.04,  360.74,  1.81],
         [105, 273.69,  154.55,  366.08,  1.49]
       ]);
-
       var options = {
         chart: {
           title: '歷年各區域工業自來水用水量',
@@ -289,25 +272,20 @@
           }
         }
       };
-
       var chart = new google.charts.Line(document.getElementById('line_top_z'));
-
       chart.draw(data, google.charts.Line.convertOptions(options));
     }
   </script>
   <script type="text/javascript">
       google.charts.load('current', {'packages':['line']});
       google.charts.setOnLoadCallback(drawChart);
-
     function drawChart() {
-
       var data = new google.visualization.DataTable();
       data.addColumn('number', '區域工業自行取水用水量');
       data.addColumn('number', '北部');
       data.addColumn('number', '中部');
       data.addColumn('number', '南部');
       data.addColumn('number', '東部');
-
       data.addRows([
         [86,  356.28,  319.84,  473.9,   50],
         [87,  378.27,  359.42,  471.18,  53.87],
@@ -330,7 +308,6 @@
         [104, 176.31,  423.2,   152.21,  53.54],
         [105, 182.22,  436.86,  159.95,  50.67]
       ]);
-
       var options = {
         chart: {
           title: '歷年各區域工業自行取水用水量',
@@ -344,16 +321,13 @@
           }
         }
       };
-
       var chart = new google.charts.Line(document.getElementById('line_top_a'));
-
       chart.draw(data, google.charts.Line.convertOptions(options));
     }
   </script>
   <script type="text/javascript">
       google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawChart);
-
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Year', '自來水', '自行取水'],
@@ -378,23 +352,19 @@
           ['104', 792.05,  808.49],
           ['105', 795.81,  832.84]
         ]);
-
         var options = {
           chart: {
             title: '台灣工業用水來源',
             subtitle: '(時間:民國86-105年；水量單位:百萬立方公尺)',
           }
         };
-
         var chart = new google.charts.Bar(document.getElementById('columnchart_material3'));
-
         chart.draw(data, google.charts.Bar.convertOptions(options));
       }
     </script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawChart);
-
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Year', '水稻灌溉用水量', '雜作灌溉用水量'],
@@ -419,23 +389,19 @@
           ['104', 5812451.44,  2943148.64],
           ['105', 4744527.34,  2565789.67]
         ]);
-
         var options = {
           chart: {
             title: '台灣灌溉用水用途',
             subtitle: '(時間:民國86-105年；水量單位:千立方公尺)',
           }
         };
-
         var chart = new google.charts.Bar(document.getElementById('columnchart_material4'));
-
         chart.draw(data, google.charts.Bar.convertOptions(options));
       }
     </script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawChart);
-
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Year', '水稻灌溉面積', '雜作灌溉面積'],
@@ -460,31 +426,25 @@
           ['104', 273128,  199422],
           ['105', 289125,  172650]
         ]);
-
         var options = {
           chart: {
             title: '台灣灌溉用水面積',
             subtitle: '(時間:民國86-105年；面積單位:公頃)',
           }
         };
-
         var chart = new google.charts.Bar(document.getElementById('columnchart_material5'));
-
         chart.draw(data, google.charts.Bar.convertOptions(options));
       }
     </script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['line']});
       google.charts.setOnLoadCallback(drawChart);
-
     function drawChart() {
-
       var data = new google.visualization.DataTable();
       data.addColumn('number', 'Year');
       data.addColumn('number', '灌溉用水');
       data.addColumn('number', '養殖用水');
       data.addColumn('number', '畜牧用水');
-
       data.addRows([
           [87,  10682.42,  1463.21, 109.17],
           [88,  10423.32,  1512,    117],
@@ -506,7 +466,6 @@
           [104, 10857.44,  880.09,  66.52],
           [105, 10791.9,   875.99,  65.74]
       ]);
-
       var options = {
         chart: {
           title: '台灣農業用水用途比較',
@@ -520,31 +479,24 @@
           }
         }
       };
-
       var chart = new google.charts.Line(document.getElementById('line_top_b'));
-
       chart.draw(data, google.charts.Line.convertOptions(options));
     }
   </script>
   <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
-
       function drawChart() {
-
         var data = google.visualization.arrayToDataTable([
           ['用水用途', '百萬立方公尺'],
           ['灌溉用水',11137.37053],
           ['養殖用水',1336.553684],
           ['畜牧用水',93.57578947],
         ]);
-
         var options = {
-          title: '台灣農業用水用途比較(民國87-105年各用水的平均值)',
+          title: '台灣農業用水用途比較(民國86-105年各用水的平均值)',
         };
-
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
         chart.draw(data, options);
       }
     </script>
@@ -596,67 +548,49 @@
           <div class="inner">
 
             <header class="align-center">
-              <h1>分析<br>台灣用水-地區與用途</h1>
+              <h1>分析<br>台灣用水</h1>
             </header>
 
             <!-- Content -->
                 <hr><p>將台灣各地區不同用途的用水量，依照年份統計分別繪製而成。<br></p><hr><p>
-                  <h2 class="tt">(一) 以地區為討論基準</h2>
+                  <h3>(一) 以地區為討論基準</h3>
                   <ol>
-                    <li>東部:<br>根據東部用水的圖表可以看見，總用水量的曲線與農業用水的曲線是十分接近的，可以看出在東部地區影響用水最大的即是農業上的使用。</li><img src="images/各地各用途用水/依地區為基準/E.PNG" class="chartp"><br><br>
-                    <li>中部:<br>根據中部用水的圖表可以看見，總用水量的曲線和農業用水的曲線隨時間起伏的樣貌是相似的，可以看出影響中部地區用水最大的是農業上的使用。<br></li><img src="images/各地各用途用水/依地區為基準/central.PNG" class="chartp"><br><br>
-                    <li>南部:</li><br><img src="images/各地各用途用水/依地區為基準/S.PNG" class="chartp"><br><br>
-                    <li>北部:<br>相較於其他縣市而言，北部地區的生活用水量較其他地區大上許多，可以從北部地區人口數為台灣最大得到解釋。</li><img src="images/各地各用途用水/依地區為基準/N.PNG" class="chartp"><br><br>
-                    <li>小結:<br>除了人口最多的北部地區之外，其他地區總用水量主要受到農業影響而上下起伏。</li><br><hr>
+                    <h3>1.北部</h3><p>從圖表上方兩條變化趨勢相近的線條得知，影響北部地區總用水量最多的為農業用水。影響次多的是生活用水，在總用水之中占有一定比例，但不是影響總用量增減的主要原因。相較於另外兩項用途，工業用水量用水占比更少，對北部地區總用水量增減並無太大影響。</p><img src="images/各地各用途用水/依地區為基準/N.PNG" class="chartp"><br><br>
+                    <h3>2.中部</h3><p>根據中部用水的圖表可以看見，總用水量的曲線和農業用水的曲線隨時間起伏的樣貌是相似的，可以看出影響中部地區用水最大的是農業上的使用。其他兩項用水對於中部總用水量較無影響。<br></p><img src="images/各地各用途用水/依地區為基準/central.PNG" class="chartp"><br><br>
+                    <h3>3.南部</h3><p>根據圖表得知，總用水量的曲線與農業用水的曲線變化趨勢接近，可以看出影響南部地區總用水量最多是在農業上的使用。其他兩項用水對於中部總用水量較無影響。</p><br><img src="images/各地各用途用水/依地區為基準/S.PNG" class="chartp"><br><br>
+                    <h3>4.東部</h3><p>東部為台灣本島居住人口最少的地區，居民生活用水占東部地區用水比例非常少；在東部不甚發達的工業，其用水量低於生活用水量非常多。根據東部用水的圖表，總用水量的曲線與農業用水的曲線十分接近，與其他用水曲線變化趨勢不慎相同，可以看出在東部地區總用水中占最大比例是在農業上的使用。</p><img src="images/各地各用途用水/依地區為基準/E.PNG" class="chartp"><br><br>
+                    <h3>5.離島</h3><p>離島地區用水從民國９７年才開始有數據紀錄。
+                    從圖表中工業用水的線條在底部的情形可以得知，離島地區工業非常不發達。而離島地區又沒有一定規模的農業發展（無此數據），故其總用水量絕大部分都是生活用水，數據趨勢隨生活用水量上下起伏。
+                    </p><br>
                   </ol>
-                  <h2 class="tt">(二) 以用途為討論基準-台灣工業用水</h2>
-                    <br>
-                    <!--<p>比較區域工業面積、用水量兩張圖，可看出工業面積的曲線和用水量的曲線隨時間起伏是相似的。</p>
-                    <p>將區域工業面積、用水量的數據算出相關係數為0.983522，證明各區域的用水量和工業面積是有關係的。</p>-->
-                    
-                    <!--<div id="line_top_y"></div>
-                    <br><br><hr>-->
-            
-                    <p>工業用水來源分為自行取水與自來水兩種，目前台灣工業用水來源仍以自行取水居多。</p>
-                    <!--這裡是以用途為準不知道要不要加這一段<p>自來水用水量:南部>北部>中部>東部>離島</p>
-                    <p>自行取水水量:中部>北部>南部>東部>離島</p>-->
-                    <p>翻閱年報得知自來水系統供應之百分率較低原因是:</p>
-                  <ol>
-                    <li>未設置工業專用供水系統，且由自來水供應之水 價與一般用水相同，會使得成本增加。</li>
-                    <li>部分工廠用水要求水質特殊，或不適用含氯或消毒藥劑之自來水，而採自行取水供應。</li>
-                    <li>應用自來水之成本高於自行取水成本，其差距太大。</li>
-                  </ol>
-                    <div id="columnchart_material3" style="width: 600px; height: 400px;"></div><br>
-                    <div id="line_top_z"></div>
-                    <br>
-                    <div id="line_top_a"></div>
-                    <br>
-                    <div id="line_top_x"></div>
-                    <br><br><hr>
-                    <p>翻閱年報得知：該區域前五大用水行業用水量占全區用水量百分比順位趨勢吻合;<br>
-                       且其順位在前者，相對的單位用水量大之業別所占比重亦大。<br>
-                       從圖表可以看出台灣從民國87年到105年的工業用水量前五名為：</p>
-                  <ol>
-                    <li>化學材料製品業</li>
-                    <li>紙漿、紙及紙製品</li>
-                    <li>食品製造業</li>
-                    <li>紡織業</li>
-                    <li>金屬製品製造業</li>
-                  </ol>
-                    <p>其中金屬製品製造業和食品製造業分別是從民國96年和97年才進入前五名;<br>
-                       而化學材料製品業和紙漿、紙及紙製品業則穩站前兩名。</p><br>
-                    <img src="images/工業用水細分1.jpg" class="chartp"><br><img src="images/工業用水細分2.jpg" class="chartp"><br>
+                  <br>
                     <hr>
-                  <h2 class="tt">(三) 以用途為討論基準-台灣農業用水</h2>
-                    <p>1.農業用水為台灣最大的用水用途，而農業用水又分為灌溉、養殖、畜牧，從圖表可以得知灌溉使用水量為最多。</p>
-                    <div id="line_top_b"></div><br><div id="piechart" class="chartpicture"></div><br><br>
-                    <p>2.灌溉用水主要分為水稻、雜作兩大類，從圖表可以看出灌溉用水以水稻居多。</p>
-                    <div id="columnchart_material4" style="width: 630px; height: 400px;"></div>
-                    <br>
+                  <h3>(二) 以用途為討論基準</h3>
+                    <h3>1.農業用水</h3>
+                    <p>在民國８６年至１０５年之平均臺灣農業用水中，灌溉用水、養殖用水、畜牧用水，分別占了平均農業用水的８８．６％、１０．６％、０．８％，以灌溉用水佔有約九成之最多數。</p>
+                    <div id="piechart" class="chartpicture"></div><br><div id="line_top_b"></div><br><br>
+                    <h4>(1)灌溉用水</h4>
+                    <p>台灣農業灌溉用水可以區分為「水稻用水」與「雜作用水」。將歷年數據平均後計算可得，水稻用水約占農業用水中６９．７％。</p>
+                    <p>以總用量而言，歷年灌溉用水量並無明顯之增減。</p>
+                    <p>從下方圖表中得知，歷年之水稻用水量皆高於雜作用水量。其中雜作用水量於民國９０年開始緩慢上升，而水稻用水則呈現緩慢下降之趨勢。</p>
+                    <p>參考相關文獻後推測此現象與民國９１年台灣加入ＷＴＯ世界貿易組織有關。由於進口農產品的強力競爭，促使台灣農業調整生產結構，種植具技術優勢的產品，例如：種苗、花卉、高級茶、熱帶水果等等，使得民國９１年時雜作用水用量最多。</p>
+                    <div id="columnchart_material4" style="width: 630px; height: 400px;"></div><br><br>
+                    <p>可從台灣灌溉用水圖表（圖十二）中看到，圖表雖隨年份增加而改變各縣市之數據與排名，代表中部縣市之紫色長條皆停留在前幾名，即中部用於種植水稻水量一直以來都大過其他地區灌溉水稻之用水。而雜作用水並無特定地區用量較多。</p>
+                    <image src="images/chart13_2.jpg">
+                    <br><br>
                     <!--<div id="columnchart_material5" style="width: 630px; height: 400px;"></div>
                     <br>--><!--因為面積與用水關聯性不太大，而且96年的雜作面積還較多，所以先把這個表格拿掉，如果之後有討論出更適合的呈現方式再讓它出現吧-->
+                    <h4>(2)養殖用水</h4>
+                    <p>以整體而言的總養殖用水量是逐年減少的。</p>
+                    <p>從資料線條上看到，約在民國９７間的養殖總用水量明顯下降，我們進一步分析養殖用水詳細的使用，繪製了另一張圖表。</p>
+                    <image src="images/chart14_2.png">
+                    <p>臺灣養殖用水主要使用的作物有蜆、虱目魚、海水蝦類等。從圖表上可以看到，約在民國９７年間，過去耗水最大之蜆與海水蝦類用水大量減少，虱目魚的耗水量僅微增加，造成此時段以後養殖用水量呈現漸少之趨勢。</p>
+                    <h4>(3)畜牧用水</h4>
+                    <p>從圖表上能看到約民國９７年時，畜牧用水的數據線條明顯下降，我們進一步分析畜牧用水詳細的使用，繪製了另一張圖表。</p>
+                    <image src="images/chart15_2.png">
+                    <p>臺灣之畜牧用水中，分為畜類與禽類，平均畜類用水約占８０．７２％，其中用水量最多為豬隻，其次為雞，第三多為乳牛。經文獻探討後推測用水減少原因為，民國９７年時，國內爆發H5N2低病原禽流感疫情，使得雞跟鴨隻養殖數量驟減，因此臺灣之畜牧用水開始明顯下降。</p>
                     <hr>
-                  <h2 class="tt">(四) 以用途為討論基準-台灣用水分類</h2>
+                  <!--<h2 class="tt">(四) 以用途為討論基準-台灣用水分類</h2>
                   <p>台灣各地區不同用途用水比例，以民國105年為例。</p>
                   <ol>
                     <li class="ct">農業用水 - 民國105年台灣農業用水</li>
@@ -671,10 +605,39 @@
                     
                   </ol>
                  
-                </ul>
+                </ul>-->
+                  <h3>2.工業用水</h3>
+                    <br>
+                    <!--<p>比較區域工業面積、用水量兩張圖，可看出工業面積的曲線和用水量的曲線隨時間起伏是相似的。</p>
+                    <p>將區域工業面積、用水量的數據算出相關係數為0.983522，證明各區域的用水量和工業面積是有關係的。</p>-->
+                    
+                    <!--<div id="line_top_y"></div>
+                    <br><br><hr>-->
+                    <h4>(1)工業用水來源</h4>
+                    <p>臺灣工業用水來源分為「自行取水」與「自來水」兩部分。統計民國８６年至民國１０５年之工業用水來源並繪製成圖表，可以得知自行取水量逐年減少，而自來水量則逐年增加。推測過去工業用水中自來水使用百分比偏少，而多採自行取水的原因如下：</p>
+                  <ol>
+                    <li>未設置工業專用供水系統。</li>
+                    <li>由自來水供應之水價與一般用水相同，使用自來水供應使得成本增加，高於自行取水成本之差距太大。</li>
+                    <li>部分工廠用水要求水質特殊，或不適用含氯或消毒藥劑之自來水，而採取自行取水。</li>
+                  </ol>
+                    <div id="columnchart_material3" style="width: 600px; height: 400px;"></div><br>
+                    <p>自來水用量從有紀錄之８６年起便持續增加，自行取水量約在民國９０年間開始明顯下降。我們推論與臺灣經濟成長有關。經濟成長促使更多工業有能力使用自來水以替代自行取水；同期間政府開始推廣節約用水，故自行取水的減少亦與政府推廣節約用水有關。</p>
+                    
+                    <h4>(2)工業用水用量</h4>
+                    <p>台灣工業用水各年用量皆有上下起伏，並非逐年以一定趨勢增加或減少，自民國８７年至民國１０５年，此段時間歷年總用量呈現非常小幅度的上升，需調整表格縱軸間距才可看出些微變化趨勢。整體而言之用量無太大變動。</p>
+                    <div id="line_top_z"></div>
+                    <br>
+                    <div id="line_top_a"></div>
+                    <br>
+                    <div id="line_top_x"></div>
+                    <br><br>
 
-                
-              
+                    <h4>(3)各產業用水</h4>
+                    <p>民國８７年至民國１０５年間之工業用水量，分別由化學材料製造業、紡織業、紙漿紙及紙製品業、食品製造業之用水量為前四大耗水量最大之產業。</p>
+                    <p>其中食品製造業在民國９６年以前數據皆呈現０。參考文獻得知，食品製造業之數據在民國９６年以前皆呈現０的原因為，行政院主計總處於民國９５年５月第８次修訂＜中華民國行業標準分類＞時，才將食品製造業列入，此後開始有此項數據紀錄；民國１０１年的數據急遽下降為０，隔年又上升回與前年相似數值之第四名。我們推測原因為，當時沒有調查該數據或者該數據因人為疏失而登記錯誤導致。</p><br>
+                    <img src="images/工業用水細分1.jpg" class="chartp"><br><img src="images/工業用水細分2.jpg" class="chartp"><br>
+                    <hr>
+                  
               </div>
             </div>
           </div>
